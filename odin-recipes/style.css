@@ -8,16 +8,8 @@ body {
     text-align: center;
 }
 
+/* === Recipes pages === */
 
-
-/* DARK THEME - TEMPORARY */
-/* body {
-    background-color: rgb(72, 75, 78);
-    color: rgb(217, 219, 221);
-} */
-
-
-/* Recipes pages */
 .recipe-page.content {
     text-align: justify;
     max-width: 800px;
@@ -171,7 +163,6 @@ body {
     display: inline-block;
     margin-left: 15px;
     max-width: 500px;
-    /* border: 2px solid red; */
 }
 
 .homepage.recipes-list .recipe-item .recipe-info .recipe-summary {
@@ -186,8 +177,6 @@ body {
     font-weight: 1000;
 }
 
-
 .homepage.recipes-list .recipe-item .img-link {
     display: inline-block;
-    /* border: 2px solid red; */
 }
