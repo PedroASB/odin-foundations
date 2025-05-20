@@ -1,6 +1,6 @@
 # Odin Recipes - Version 1
 
-These are some images from version 1 of Odin Recipes project:
+These are some images from the version 1 of the Odin Recipes project:
 
 ![Homepage](./homepage.png)
 

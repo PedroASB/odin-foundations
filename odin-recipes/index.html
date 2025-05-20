@@ -4,32 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odin Recipes</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Odin Recipes</h1>
+    <div class="upper-box">
+        <img class="logo-image" src="./img/odin-recipes-logo.png" alt="Odin Recipes Logo"">
+        <div class="logo-title">Odin Recipes</div>
+    </div>
 
-    <h4>Meals ┃ Dinner ┃ Occasions ┃ Kitchen Tips ┃ Ingredients ┃ News</h4>
+    <div class="upper-options-box">
+        <div class="upper-option">Meals</div>
+        <div class="upper-option">Dinner</div>
+        <div class="upper-option">Occasions</div>
+        <div class="upper-option">Kitchen Tips</div>
+        <div class="upper-option">Ingredients</div>
+        <div class="upper-option">News</div>
+    </div>
+
+
+    <div>
+        <img class="homepage main-img" id="img03-1" src="./img/pizza-grill.jpg" alt="Pizza on the Grill" width="200">
+        <div class="homepage side-imgs-col">
+            <img class="side-img" id="img01-1" src="./img/fish-and-chips.jpg" alt="Classic Fish and Chips" width="200">
+            <img class="side-img" id="img05-1" src="./img/shrimp-scampi-pasta.jpg" alt="Shrimp Scampi with Pasta" width="200">
+            <img class="side-img" id="img02-1" src="./img/lasagna.jpg" alt="Homemade Lasagna" width="200">
+            <img class="side-img" id="img04-1" src="./img/ratatouille.jpg" alt="Ratatouille" width="200">
+        </div>
+    </div>
     
-    <img src="./img/fish-and-chips.jpg" alt="Classic Fish and Chips" width="200">
-    <img src="./img/pizza-grill.jpg" alt="Pizza on the Grill" width="200">
-    <img src="./img/shrimp-scampi-pasta.jpg" alt="Shrimp Scampi with Pasta" width="200">
-    
-    <h2>Welcome to Odin Recipes!</h2>
+    <h2 class="homepage title">Welcome to Odin Recipes!</h2>
     <p>Here you can find recipes for many different and popular dishes. Click on the dish name to view the recipe.</p>
     
-    <ul>
-        <li><a href="./recipes/classic-fish-and-chips.html">Classic Fish and Chips</a></li>
-        <li><a href="./recipes/homemade-lasagna.html">Homemade Lasagna</a></li>
-        <li><a href="./recipes/pizza-on-the-grill.html">Pizza on the Grill</a></li>
-        <li><a href="./recipes/ratatouille.html">Ratatouille</a></li>
-        <li><a href="./recipes/shrimp-scampi-with-pasta.html">Shrimp Scampi with Pasta</a></li>
-    </ul>
-    
-    <img src="./img/odin-recipes-logo.png" alt="Odin Recipes Logo" width="150">
+    <div class="homepage recipes-list">
+        <div class="recipe-item">
+            <a class="img-link" href="./recipes/classic-fish-and-chips.html">
+                <img id="img01-2" src="./img/fish-and-chips.jpg" alt="Classic Fish and Chips" width="200">
+            </a>
 
-    <br> <br>
-    <p>────────────────────────────────────────────────────────────────</p>
-    <p>About Us ┃ Privacy Policy ┃ Terms of Service ┃ Contact</p>
+            <div class="recipe-info">
+                <a href="./recipes/classic-fish-and-chips.html">Classic Fish and Chips</a>
+                <div class="recipe-summary">★ ★ ★ ★ ☆ <b>4.9</b> (1,154) ┃ <u><b>126</b> reviews</u> ┃ <u><b>15</b> photos</u></div>
+                <p>Fish and chips is a traditional British dish consisting of fried fish and thinly sliced fried potatoes. The potatoes are called "French fries" in the U.S. and "chips" in the U.K. Many food historians think the first fish and chips shop was opened by Joseph Malin, a young Jewish immigrant, in London in the 1860s. His shop was so popular, it remained open until the 1970s.</p>
+            </div>
+        </div>
+        
+
+        <div class="recipe-item">
+            <a class="img-link" href="./recipes/homemade-lasagna.html">
+                <img id="img02-2" src="./img/lasagna.jpg" alt="Homemade Lasagna" width="200">
+            </a>
+
+            <div class="recipe-info">
+                <a href="./recipes/homemade-lasagna.html">Homemade Lasagna</a>
+                <div class="recipe-summary">★ ★ ★ ★ ☆ <b>4.8</b> (1,510) ┃ <u><b>346</b> reviews</u> ┃ <u><b>16</b> photos</u></div>
+                <p>This is a special homemade lasagna recipe with a meaty, made-from-scratch tomato sauce and a deliciously cheesy filling. A more traditional lasagna filling would be made with ricotta but this homemade recipe calls for a blend of small-curd cottage cheese and Parmesan. Serve with a leafy green salad and crusty garlic bread.</p>
+            </div>
+        </div>
+
+
+        <div class="recipe-item">
+            <a class="img-link" href="./recipes/pizza-on-the-grill.html">
+                <img id="img03-2" src="./img/pizza-grill.jpg" alt="Pizza on the Grill" width="200">
+            </a>
+
+            <div class="recipe-info">
+                <a href="./recipes/pizza-on-the-grill.html">Pizza on the Grill</a>
+                <div class="recipe-summary">★ ★ ★ ★ ☆ <b>4.7</b> (952) ┃ <u><b>74</b> reviews</u> ┃ <u><b>11</b> photos</u></div>
+                <p>Pizza on the grill is a fantastic way to make pizza at home. The heat of a hot grill is a perfect match for a professional pizza oven. Learn the tricks for making and grilling pizza from scratch with this recipe. Feel free to use your favorite toppings, but keep in mind not to overload the pizza.</p>
+            </div>
+        </div>
+
+
+        <div class="recipe-item">
+            <a class="img-link" href="./recipes/ratatouille.html">
+                <img id="img04-2" src="./img/ratatouille.jpg" alt="Ratatouille" width="200">
+            </a>
+
+            <div class="recipe-info">
+                <a href="./recipes/ratatouille.html">Ratatouille</a>
+                <div class="recipe-summary">★ ★ ★ ★ ☆ <b>4.6</b> (584) ┃ <u><b>89</b> reviews</u> ┃ <u><b>10</b> photos</u></div>
+                <p>Fish and chips is a traditional British dish consisting of fried fish and thinly sliced fried potatoes. The potatoes are called "French fries" in the U.S. and "chips" in the U.K. Many food historians think the first fish and chips shop was opened by Joseph Malin, a young Jewish immigrant, in London in the 1860s. His shop was so popular, it remained open until the 1970s.</p>
+            </div>
+        </div>
+
+
+        <div class="recipe-item">
+            <a class="img-link" href="./recipes/shrimp-scampi-with-pasta.html">
+                <img id="img05-2" src="./img/shrimp-scampi-pasta.jpg" alt="Shrimp Scampi with Pasta" width="200">
+            </a>
+            
+            <div class="recipe-info">
+                <a href="./recipes/shrimp-scampi-with-pasta.html">Shrimp Scampi with Pasta</a>
+                <div class="recipe-summary">★ ★ ★ ★ ☆ <b>4.7</b> (1,285) ┃ <u><b>184</b> reviews</u> ┃ <u><b>14</b> photos</u></div>
+                <p>Shrimp scampi is a seafood dish made of shrimp cooked in a butter, garlic, and white wine sauce. This recipe can be made in many ways. Everyone has a different version, but scampi usually includes these three ingredients. You can serve shrimp scampi by itself as an appetizer or over pasta as a main dish.</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="info-box">
+        <span class="info-option">About Us</span>
+        <span class="info-option">Privacy Policy</span>
+        <span class="info-option">Terms of Service</span>
+        <span class="info-option">Contact</span>
+    </div>
 
 </body>
 </html>
