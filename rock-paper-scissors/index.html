@@ -4,8 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <style>
+        body { /* dark mode */
+            background-color: rgb(59, 59, 66);
+            color: aliceblue;
+        }
+    </style>
 </head>
 <body>
-    <script>console.log("Rock Paper Scissors")</script>
+    <script>
+        function getComputerChoice() {
+            let choice = Math.random()
+            if (choice < 1/3) return "rock"
+            if (choice < 2/3) return "paper"
+            return "scissors"
+        }
+        
+        function getHumanChoice(promptMessage="") {
+            let choice = window.prompt(promptMessage).trim().toLowerCase()
+            switch (choice) {
+                case "1":
+                case "rock":
+                    return 1
+                case "2":
+                case "paper":
+                    return 2
+                case "3":
+                case "scissors":
+                    return 3
+                default: // invalid choice
+                    return 0
+            }
+        }
+
+        // begin
+        let promptMessage = "ROCK PAPER SCISSORS\n\n" + 
+                            "Make your choice!\n" + 
+                            "1 - Rock\n" + 
+                            "2 - Paper\n" + 
+                            "3 - Scissors\n"
+        let choice = getHumanChoice(promptMessage)
+        switch (choice) {
+            case 0:
+                window.alert("Your choice was invalid!")
+                break
+            case 1:
+                window.alert("You chose ROCK")
+                break
+            case 2:
+                window.alert("You chose PAPER")
+                break
+            case 3:
+                window.alert("You chose SCISSORS")
+                break
+        }
+        
+    </script>
 </body>
 </html>
