@@ -4,21 +4,41 @@
     box-sizing: inherit;
     margin: 0;
     padding: 0;
-    /* border: 2px solid red; */
 }
 
 body {
-    background-color: rgb(78, 78, 85);
+    background-color: rgb(191, 202, 223);
     color: aliceblue;
     height: 100vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
     font-family: 'Gill Sans', Calibri, sans-serif;
-    gap: 20px;
-    padding: 20px;
 }
+
+#header, #footer {
+    display: flex;
+    flex: 0 1 auto;
+    background-color: rgb(26, 89, 131);
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: flex-start;
+    gap: 48px;
+    padding: 16px;
+}
+
+#footer {
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    font-size: 16px;
+}
+
 
 #main-title {
     margin: 10px;
@@ -30,12 +50,12 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    padding: 30px;
+    padding: 0px;
     min-height: 400px;
 }
 
-#container .title {
-    color: aliceblue;
+#container > .title {
+    color: rgb(18, 63, 94);
 }
 
 #options {
@@ -66,9 +86,8 @@ body {
 
 #result-box {
     margin: 10px;
-    padding: 10px;
     min-width: 500px;
-    min-height: 150px;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,12 +95,14 @@ body {
 
 #result-box #round-log {
     min-width: 300px;
-    min-height: 50px;
-    padding: 10px;
+    min-height: 120px;
+    /* padding: 10px; */
     margin: 10px;
     font-size: 18px;
+    color: rgb(18, 63, 94);
+    font-weight: bold;
+    text-align: center;
 }
-
 
 #scoreboard {
     padding: 16px;
@@ -106,5 +127,5 @@ body {
     flex-direction: column;
     gap: 8px;
     font-size: 18px;
+    color: aliceblue;
 }
-

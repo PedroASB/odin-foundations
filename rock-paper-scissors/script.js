@@ -1,6 +1,6 @@
 const ROCK = "rock", PAPER = "paper", SCISSORS = "scissors";
-const SCORE_TO_WIN = 2;
-let computerScore = 0, playerScore = 0;
+const SCORE_TO_WIN = 5;
+let computerScore = 0, playerScore = 0, currentRound = 0;
 
 function getComputerChoice() {
     let choice = Math.random();
@@ -9,9 +9,9 @@ function getComputerChoice() {
     return SCISSORS;
 }
 
-
 function playRound(playerChoice, computerChoice) {
     let result;
+    currentRound++;
 
     if (playerChoice === ROCK) {
         if (computerChoice === ROCK) {
@@ -71,19 +71,20 @@ function playRound(playerChoice, computerChoice) {
     const playerScoreSpan = document.querySelector("#player-score");
     let roundMessage, winningMessage;
 
-    roundMessage = `You chose ${playerChoice.toUpperCase()}!\n` + 
+    roundMessage =  `Round: ${currentRound}\n\n` + 
+                    `You chose ${playerChoice.toUpperCase()}!\n` + 
                     `The computer chose ${computerChoice.toUpperCase()}!\n\n` + 
                     result;
 
     if (playerScore >= SCORE_TO_WIN) {
         winningMessage = `\n\nCongratulations! You won the game! (${playerScore}-${computerScore})`;
         roundMessage += winningMessage;
-        playerScore = computerScore = 0;
+        playerScore = computerScore = currentRound = 0;
     }
     else if (computerScore >= SCORE_TO_WIN) { 
         winningMessage = `\n\nYou lost the game! (${playerScore}-${computerScore})`;
         roundMessage += winningMessage;
-        playerScore = computerScore = 0;
+        playerScore = computerScore = currentRound = 0;
     }
 
     roundLog.innerText = roundMessage;
@@ -96,36 +97,16 @@ function playRound(playerChoice, computerChoice) {
     computerScoreSpan.innerText = computerScore;
 }
 
-function playGame(nRounds, promptMessage) {
-    while (nRounds--) {
-        let humanChoice = getHumanChoice(promptMessage);
-        let computerChoice = getComputerChoice();
-        playRound(humanChoice, computerChoice);
-    }
-    let finalMessage = "ROCK PAPER SCISSORS\n\n" + 
-                        "Final Score\n\n" + 
-                        `Your score: ${playerScore}\n` + 
-                        `Computer's score: ${computerScore}\n\n`;
-    if (playerScore > computerScore) {
-        finalMessage += "Congratulations! You won the game!";
-    }
-    else if (playerScore < computerScore) {
-        finalMessage += "You lost the game!";
-    }
-    else {
-        finalMessage += "It's a tie!";
-    }
-    window.alert(finalMessage);
-}
-
 function startGame(event) {
     const rockButton = document.querySelector("#rock-btn");
     const paperButton = document.querySelector("#paper-btn");
     const scissorsButton = document.querySelector("#scissors-btn");
+    const scoreToWin = document.querySelector("#score-to-win");
 
     rockButton.addEventListener("click", () => playRound(ROCK, getComputerChoice()));
     paperButton.addEventListener("click", () => playRound(PAPER, getComputerChoice()));
     scissorsButton.addEventListener("click", () => playRound(SCISSORS, getComputerChoice()));
+    scoreToWin.innerText = SCORE_TO_WIN;
 
     const buttons = document.querySelectorAll("button");
 
