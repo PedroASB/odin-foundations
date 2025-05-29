@@ -4,14 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <style>
-        body { /* dark mode */
-            background-color: rgb(59, 59, 66);
-            color: aliceblue;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
 </head>
 <body>
-    <script src="./script.js"></script>
+
+    <h1 id="main-title">Rock Paper Scissors!</h1>
+
+    <div id="container">
+
+        <h2 class="title">Make your choice:</h2>
+
+        <div id="options">
+            <button id="rock-btn" class="option">
+                <div class="icon">🪨</div> <div class="text">Rock</div>
+            </button>
+            <button id="paper-btn" class="option">
+                <div class="icon">📄</div> <div class="text">Paper</div>
+            </button>
+            <button id="scissors-btn" class="option">
+                <div class="icon">✂️</div> <div class="text">Scissors</div>
+            </button>
+        </div>
+
+        <div id="result-box">
+        </div>
+
+        <div id="scoreboard">
+            <div class="title">Scoreboard</div>
+            <div id="scores">
+                <div>Your score: <span id="player-score">0</span></div>
+                <div>Computer's score: <span id="computer-score">0</span></div>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 </html>
