@@ -1,3 +1,5 @@
+/* BORDER BOX */
+
 html {
     box-sizing: border-box;
 }
@@ -8,4 +10,19 @@ html {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
+}
+
+/* FLEXBOX */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    /* overflow: hidden; */
 }
