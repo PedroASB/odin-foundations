@@ -9,6 +9,55 @@ function getComputerChoice() {
     return SCISSORS;
 }
 
+function getRPSIcon(rps) {
+    switch (rps) {
+        case ROCK: return "✊";
+        case PAPER: return "✋";
+        case SCISSORS: return "✌️";
+        default: return "";
+    }
+}
+
+function checkWinning() {
+    let winningMessage;
+
+    if (playerScore >= SCORE_TO_WIN) {
+        winningMessage = `\n\nCongratulations! You won the game! (${playerScore}-${computerScore})`;
+        playerScore = computerScore = currentRound = 0;
+        return winningMessage;
+    }
+
+    if (computerScore >= SCORE_TO_WIN) { 
+        winningMessage = `\n\nYou lost the game! (${playerScore}-${computerScore})`;
+        playerScore = computerScore = currentRound = 0;
+        return winningMessage;
+    }
+
+    return false;
+}
+
+function updateResultBox(playerChoice, computerChoice, result) {
+    const currentRoundSpan = document.querySelector("#current-round");
+    const playerChoiceIcon = document.querySelector("#player-choice .icon");
+    const computerChoiceIcon = document.querySelector("#computer-choice .icon");
+    const resultMessage = document.querySelector("#result-msg");
+    const computerScoreSpan = document.querySelector("#computer-score");
+    const playerScoreSpan = document.querySelector("#player-score");
+
+    currentRoundSpan.innerText = currentRound;
+    playerChoiceIcon.innerText = getRPSIcon(playerChoice);
+    playerChoiceIcon.classList.add(playerChoice); // assuming playerChoice is a string
+    computerChoiceIcon.innerText = getRPSIcon(computerChoice);
+    computerChoiceIcon.classList.add(computerChoice); // assuming computerChoice is a string
+    resultMessage.innerText = result;
+    playerScoreSpan.innerText = playerScore;
+    computerScoreSpan.innerText = computerScore;
+
+    let winningMessage = checkWinning();
+
+    if (winningMessage) resultMessage.innerText += winningMessage;
+}
+
 function playRound(playerChoice, computerChoice) {
     let result;
     currentRound++;
@@ -62,39 +111,10 @@ function playRound(playerChoice, computerChoice) {
         }
     }
     else {
-        console.error("invalid humanChoice");
+        console.error("invalid playerChoice");
     }
 
-    const resultBox = document.querySelector("#result-box");
-    const roundLog = document.createElement("div");
-    const computerScoreSpan = document.querySelector("#computer-score");
-    const playerScoreSpan = document.querySelector("#player-score");
-    let roundMessage, winningMessage;
-
-    roundMessage =  `Round: ${currentRound}\n\n` + 
-                    `You chose ${playerChoice.toUpperCase()}!\n` + 
-                    `The computer chose ${computerChoice.toUpperCase()}!\n\n` + 
-                    result;
-
-    if (playerScore >= SCORE_TO_WIN) {
-        winningMessage = `\n\nCongratulations! You won the game! (${playerScore}-${computerScore})`;
-        roundMessage += winningMessage;
-        playerScore = computerScore = currentRound = 0;
-    }
-    else if (computerScore >= SCORE_TO_WIN) { 
-        winningMessage = `\n\nYou lost the game! (${playerScore}-${computerScore})`;
-        roundMessage += winningMessage;
-        playerScore = computerScore = currentRound = 0;
-    }
-
-    roundLog.innerText = roundMessage;
-    roundLog.id = "round-log";
-
-    resultBox.innerHTML = '';
-    resultBox.appendChild(roundLog);
-
-    playerScoreSpan.innerText = playerScore;
-    computerScoreSpan.innerText = computerScore;
+    updateResultBox(playerChoice, computerChoice, result);
 }
 
 function startGame(event) {

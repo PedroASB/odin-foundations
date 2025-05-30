@@ -18,17 +18,34 @@
 
         <div id="options">
             <button id="rock-btn" class="option">
-                <div class="icon">🪨</div> <div class="text">Rock</div>
+                <div class="icon rock">✊</div> <div class="text">Rock</div>
             </button>
             <button id="paper-btn" class="option">
-                <div class="icon">📄</div> <div class="text">Paper</div>
+                <div class="icon paper">✋</div> <div class="text">Paper</div>
             </button>
             <button id="scissors-btn" class="option">
-                <div class="icon">✂️</div> <div class="text">Scissors</div>
+                <div class="icon scissors">✌️</div> <div class="text">Scissors</div>
             </button>
         </div>
 
         <div id="result-box">
+            <div id="round-log">
+                <div>Round: <span id="current-round"></span></div>
+                <div id="choices">
+                    <div id="player-choice" class="choice">
+                        <div class="text">You: </div>
+                        <div class="icon"></div>
+                    </div>
+                    <div>vs.</div>
+                    <div id="computer-choice" class="choice">
+                        <div class="text">Computer:</div>
+                        <div class="icon"></div>
+                    </div>      
+                </div>
+                <div id="result-msg">
+
+                </div>
+            </div>
         </div>
 
         <div id="scoreboard">

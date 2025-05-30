@@ -4,13 +4,14 @@
     box-sizing: inherit;
     margin: 0;
     padding: 0;
+    /* border: 2px solid red; */
 }
 
 body {
-    background-color: rgb(191, 202, 223);
+    background-color: rgb(204, 211, 226);
     color: aliceblue;
     height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -48,10 +49,12 @@ body {
 #container {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     gap: 8px;
-    padding: 0px;
-    min-height: 400px;
+    padding: 16px;
+    min-height: 500px;
+    flex: 1 0 auto;
 }
 
 #container > .title {
@@ -62,58 +65,107 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 48px;
+    gap: 24px;
     padding: 16px;
+    min-width: 400px;
+    flex: 0 1 auto;
 }
 
 #options button {
-    margin: 0px;
-    padding: 12px 24px;
     background-color: rgb(95, 158, 160);
-    border: none;
-    color: aliceblue;
     border-radius: 8px;
-    font-size: 18px;
+    color: aliceblue;
+    border: none;
+    margin: 0px;
+    padding: 8px;
+    min-width: 80px;
+    min-height: 80px;
+    font-size: 16px;
     font-weight: 900;
 }
 
 
 #options .option .icon {
-    font-size: 48px;
-    margin: 16px;
+    font-size: 36px;
+    margin: 8px;
+}
+
+.icon.rock {
+    transform: rotate(-90deg);
+}
+
+.icon.scissors {
+    transform: rotate(-90deg);
 }
 
 
 #result-box {
     margin: 10px;
-    min-width: 500px;
+    min-width: 50vw;
     min-height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1 1 auto;
 }
 
-#result-box #round-log {
-    min-width: 300px;
+#round-log {
+    min-width: 400px;
     min-height: 120px;
-    /* padding: 10px; */
     margin: 10px;
     font-size: 18px;
     color: rgb(18, 63, 94);
     font-weight: bold;
     text-align: center;
-}
-
-#scoreboard {
-    padding: 16px;
-    min-height: 130px;
-    min-width: 300px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+}
+
+#round-log > * {
+    margin: 8px;
+    padding: 8px;
+    /* border: 2px solid black; */
+}
+
+#round-log #choices {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#round-log #choices .choice {
+    background-color: rgb(199, 80, 80);
+    border-radius: 8px;
+    color: aliceblue;
+    min-height: 120px;
+    min-width: 120px;
+    padding: 0px;
+}
+
+#round-log #choices .choice .icon {
+    margin: 8px;
+    font-size: 48px;
+}
+
+
+#round-log #choices .choice .text {
+    margin: 8px;
+}
+
+
+
+
+#scoreboard {
+    padding: 18px;
+    min-height: 80px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
     background-color: rgb(189, 153, 54);
     color: aliceblue;
     border-radius: 16px;
+    flex: 0 1 auto;
 }
 
 #scoreboard .title {
@@ -126,6 +178,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    font-size: 18px;
+    font-size: 16px;
     color: aliceblue;
 }
