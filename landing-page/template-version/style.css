@@ -16,7 +16,7 @@ body {
 #header, #footer {
     display: flex;
     flex: 0 1 auto;
-    background-color: #252525;
+    background-color: #1F2937;
 }
 
 #header {
@@ -30,17 +30,14 @@ body {
 
 #header .top {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 16px 0px;
+    gap: 20px;
 }
 
-#header > .container {
+#header .top .container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    gap: 48px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 510px;
 }
 
 #header #links {
@@ -48,45 +45,34 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    gap: 32px;
+    gap: 16px;
 }
 
 #header #links a {
     text-decoration: none;
 }
 
+
 #header .bottom {
     display: flex;
+    max-width: 1200px;
     margin-bottom: 48px;
 }
 
 #header .bottom .container {
     display: flex;
-    gap: 96px;
+    gap: 48px;
 }
 
 #header #header-logo {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-#header #header-logo .logo-img {
-    width: 60px;
-}
-
-#header #header-logo .logo-text {
-    font-family: "Inder", sans-serif;
-    font-weight: bold;
-    color: #f8ab37;
-    font-size: 32px;
+    font-size: 24px;
+    color: #F9FAF8;
 }
 
 #header .main-box.left {
     display: flex;
     flex-direction: column;
     max-width: 500px;
-    gap: 8px;
 }
 
 #header .main-box.left #main-title {
@@ -101,11 +87,6 @@ body {
     align-items: center;
 }
 
-#header #header-img {
-    width: 500px;
-    border: 2px solid #f8ab37;
-    border-radius: 8px;
-}
 
 #header #placeholder {
     display: flex;
@@ -140,10 +121,14 @@ body {
     margin: 16px 0;
 }
 
+
+
 #content {
     display: flex;
     flex-direction: column;
 }
+
+
 
 #info {
     display: flex;
@@ -168,7 +153,7 @@ body {
 
 #info .images-block {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     gap: 64px;
 }
@@ -176,25 +161,16 @@ body {
 #info .img-block {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    max-width: 200px;
+    max-width: 150px;
     gap: 16px;
 
 }
 
 #info .img-block .img {
-    border: 4px solid #f8ab37;
-    border-radius: 360px;
+    border: 4px solid #3882F6;
+    border-radius: 8px;
     width: 150px;
     height: 150px;
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#info .img-block .img img {
-    width: 120px;
 }
 
 #info .img-block .text {
@@ -202,10 +178,12 @@ body {
     color: #58595a;
 }
 
+
+
 #quote {
     display: flex;
     justify-content: center;
-    background-color: #f8ab3741;
+    background-color: #E5E7EB;
     padding: 96px;
 }
 
@@ -228,6 +206,7 @@ body {
     font-weight: 600;
 }
 
+
 #sign-up {
     display: flex;
     justify-content: center;
@@ -236,12 +215,12 @@ body {
 }
 
 #sign-up .container, button {
-    background-color: #f8ab37;
-    color: #252525;
+    background-color: #3882F6;
+    color: white;
 }
 
 #sign-up #button-2 {
-    border: 3px solid #252525;
+    border: 3px solid white;
     margin: 0 8px;
 }
 
@@ -262,6 +241,8 @@ body {
     font-size: large;
     font-weight: bold;
 }
+
+
 
 #footer {
     justify-content: center;

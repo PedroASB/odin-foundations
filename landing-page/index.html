@@ -5,33 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="./style.css">
-    <!-- Adding new font family -->
+    <!-- Adding new fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inder&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="header">
-        <div class="top">
-            <div class="container">
-                <div id="header-logo">Header Logo</div>
+        <div class="container">
+            <div class="top">
+                <div id="header-logo">
+                    <img src="./img/logo.png" alt="" class="logo-img">
+                    <div class="logo-text">Kangaroo</div>
+                </div>
                 <ul id="links">
-                    <li><a href="#">header link one</a></li>
-                    <li><a href="#">header link two</a></li>
-                    <li><a href="#">header link three</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Learning Paths</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </div>
-        </div>
-
-        <div class="bottom">
-            <div class="container">
-                <div class="main-box left">
-                    <h1 id="main-title">This website is awesome</h1>
-                    <div id="secondary-text">This website has some subtext that goes under the main title. It's a smaller font and the color is lower contrast.</div>
-                    <button id="button-1">Sign up</button>
-                </div>
-                <div class="main-box right">
-                    <div id="placeholder">this is a placeholder for an image</div>
+    
+            <div class="bottom">
+                <div class="container">
+                    <div class="main-box left">
+                        <h1 id="main-title">Start Coding.<br>Jump Further.</h1>
+                        <div id="secondary-text">Kangaroo is your launchpad into the world of development. Whether you're starting from scratch or exploring a new language, we guide you through curated learning paths, hands-on projects, and real-world skills. Learn at your pace, build your portfolio, and level up with confidence — one jump at a time.</div>
+                        <button id="button-1">Get started</button>
+                    </div>
+                    <div class="main-box right">
+                        <img src="./img/header-img.jpg" alt="Header Image" id="header-img">
+                    </div>
                 </div>
             </div>
         </div>
@@ -40,39 +46,44 @@
     <div id="content">
         <div id="info">
             <div class="container">
-                <h2 class="title">Some random information.</h2>
+                <h2 class="title">Take your first jump in your programming career.</h2>
                 <div class="images-block">
                     <div class="img-block">
-                        <!-- <img src="" alt=""> -->
-                        <div class="img"></div>
-                        <div class="text">this is some subtext under an illustration or image</div>
+                        <div class="img"><img src="./img/info-1.png" alt="Info"></div>
+                        <div class="text">
+                            Flexible, beginner-friendly lessons — anytime, anywhere.
+                        </div>
+                    </div>
+
+                    <div class="img-block">
+                        <div class="img"><img src="./img/info-2.png" alt="Info"></div>
+                        <div class="text">
+                            Sharpen your skills with guided exercises and coding quests.
+                        </div>
+                    </div>
+
+                    <div class="img-block">
+                        <div class="img"><img src="./img/info-3.png" alt="Info"></div>
+                        <div class="text">
+                            Hands-on projects to master real-world coding skills.
+                        </div>
                     </div>
     
                     <div class="img-block">
-                        <!-- <img src="" alt=""> -->
-                        <div class="img"></div>
-                        <div class="text">this is some subtext under an illustration or image</div>
+                        <div class="img"><img src="./img/info-4.png" alt="Info"></div>
+                        <div class="text">
+                            Web, mobile, data, or game dev — you choose where to jump.
+                        </div>
                     </div>
-    
-                    <div class="img-block">
-                        <!-- <img src="" alt=""> -->
-                        <div class="img"></div>
-                        <div class="text">this is some subtext under an illustration or image</div>
-                    </div>
-    
-                    <div class="img-block">
-                        <!-- <img src="" alt=""> -->
-                        <div class="img"></div>
-                        <div class="text">this is some subtext under an illustration or image</div>
-                    </div>
+
                 </div>
             </div>
         </div>
     
         <div id="quote">
             <div class="container">
-                <em id="thor-quote">This is an inspiring quote, or a testimonial from a customer. Maybe it's just filling up space, or maybe people will actually will read it. Who knows? All I know is that it looks nice.</em>
-                <div id="thor-author">-Thor, God of Thunder</div>
+                <em id="thor-quote">I think everybody in this country should learn how to program a computer, should learn a computer language, because it teaches you how to think. I view computer science as a liberal art. It should be something that everyone takes.</em>
+                <div id="thor-author">— Steve Jobs</div>
             </div>
         </div>
     
@@ -80,7 +91,7 @@
             <div class="container">
                 <div>
                     <strong class="title">Call to action! It's time!</strong>
-                    <div class="text">Sign up for our product by clicking that button right over there!</div>
+                    <div class="text">Join Kangaroo and explore interactive paths to learn programming from zero to pro!</div>
                 </div>
                 <button id="button-2">Sign up</button>
             </div>
@@ -88,7 +99,7 @@
     </div>
 
     <div id="footer">
-        Copyright © The Odin Project 2021
+        Copyright © Kangaroo
     </div>
     
 </body>
