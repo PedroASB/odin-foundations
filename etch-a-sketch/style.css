@@ -35,6 +35,13 @@ body {
     font-size: 13px;
 }
 
+#header #grid-lines-btn {
+    width: 120px;
+    height: 30px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
 
 #main-container {
     background-color: rgb(61, 61, 65); /* dark theme */
@@ -47,8 +54,8 @@ body {
 #grid {
     width: 85vh;
     height: 85vh;
-    /* background-color: rgb(163, 163, 163); */
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
+    background-color: rgb(163, 163, 163);
     display: flex;
     flex-direction: column;
     border: 6px solid rgb(26, 26, 26);
