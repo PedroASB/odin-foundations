@@ -3,6 +3,8 @@
 ### Description
 
 - HTML + CSS project (using flexbox).
+- It's a landing page for a fictional online programming courses platform called Kangaroo.
+- It was initially implemented as a template for a generic landing page, which can be found in `/landing-page/template-version/`.
 
 ### Screenshots
 
