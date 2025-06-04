@@ -80,10 +80,36 @@ function createGrid(gridSize, squareBorderSize) {
 }
 
 function newGrid() {
-    let gridSize = prompt("Enter new grid size:");
-    colorful = confirm("Colorful mode?");
-    darkening = confirm("Darkening mode?");
-    createGrid(gridSize, squareBorderSize);
+    let gridInput = document.querySelector("input#grid-input");
+    let gridSize = parseInt(gridInput.value);
+    if (gridSize < 1 || gridSize > 100)
+        alert("The grid size must be an integer between 1 and 100, inclusive.");
+    else
+        createGrid(gridSize, squareBorderSize);
+}
+
+function toggleColorful(event) {
+    event.target.classList.toggle("active");
+    if (event.target.classList.contains("active")) {
+        colorful = true;
+        event.target.innerText = "Colorful Mode ON";
+    }
+    else {
+        colorful = false;
+        event.target.innerText = "Colorful Mode OFF";
+    }
+}
+
+function toggleDarkening(event) {
+    event.target.classList.toggle("active");
+    if (event.target.classList.contains("active")) {
+        darkening = true;
+        event.target.innerText = "Darkening Mode ON";
+    }
+    else {
+        darkening = false;
+        event.target.innerText = "Darkening Mode OFF";
+    }
 }
 
 
@@ -101,5 +127,9 @@ createGrid(initialGridSize, squareBorderSize);
 
 let newGridButton = document.querySelector("button#new-grid-btn");
 let gridLinesButton = document.querySelector("button#grid-lines-btn");
+let colorfulButton = document.querySelector("button#colorful-btn");
+let darkeningButton = document.querySelector("button#darkening-btn");
 
 newGridButton.addEventListener("click", newGrid);
+colorfulButton.addEventListener("click", toggleColorful);
+darkeningButton.addEventListener("click", toggleDarkening);
