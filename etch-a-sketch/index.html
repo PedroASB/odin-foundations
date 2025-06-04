@@ -6,21 +6,26 @@
     <title>Etch A Sketch</title>
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inder&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div id="header">
         <div id="title">Etch A Sketch</div>
-        <div class="container">
+        <div id="info">
+            <div>Move the mouse pointer through the grid to draw.</div>
+            <div>Hold <span class="shift-key">⬆ Shift</span> to erase.</div>
+        </div>
+        <div id="new-grid-container">
+            <span>Enter grid size:</span>
+            <input type="number" id="grid-input" min="1" max="100" step="1" value="16">
             <button id="new-grid-btn">New grid</button>
         </div>
-        <div>
-            <input type="number" id="grid-input" min="1" max="100" step="1" value="16">
-        </div>
-        <div>
+        <div id="settings-container">
             <button id="colorful-btn">Colorful Mode OFF</button>
-        </div>
-        <div>
             <button id="darkening-btn">Darkening Mode OFF</button>
         </div>
     </div>

@@ -89,26 +89,32 @@ function newGrid() {
 }
 
 function toggleColorful(event) {
-    event.target.classList.toggle("active");
-    if (event.target.classList.contains("active")) {
+    let element = event.target;
+    element.classList.toggle("active");
+    if (element.classList.contains("active")) {
         colorful = true;
-        event.target.innerText = "Colorful Mode ON";
+        element.innerText = "Colorful Mode ON";
+        element.style.backgroundColor = BUTTON_ON_COLOR;
     }
     else {
         colorful = false;
-        event.target.innerText = "Colorful Mode OFF";
+        element.innerText = "Colorful Mode OFF";
+        element.style.backgroundColor = BUTTON_OFF_COLOR;
     }
 }
 
 function toggleDarkening(event) {
-    event.target.classList.toggle("active");
-    if (event.target.classList.contains("active")) {
+    let element = event.target;
+    element.classList.toggle("active");
+    if (element.classList.contains("active")) {
         darkening = true;
-        event.target.innerText = "Darkening Mode ON";
+        element.innerText = "Darkening Mode ON";
+        element.style.backgroundColor = BUTTON_ON_COLOR;
     }
     else {
         darkening = false;
-        event.target.innerText = "Darkening Mode OFF";
+        element.innerText = "Darkening Mode OFF";
+        element.style.backgroundColor = BUTTON_OFF_COLOR;
     }
 }
 
@@ -116,6 +122,9 @@ function toggleDarkening(event) {
 // Begin
 const EMPTY_COLOR = "rgba(0, 0, 0, 0)";
 const BLACK_COLOR = "rgba(0, 0, 0, 1)";
+const BUTTON_OFF_COLOR = "rgb(255, 141, 141)";
+const BUTTON_ON_COLOR = "rgb(176, 253, 187)";
+
 const initialGridSize = 16
 const squareBorderSize = 1;
 const SQUARE_BORDER = `${squareBorderSize}px solid lightgrey`;
@@ -126,7 +135,6 @@ let darkening = false;
 createGrid(initialGridSize, squareBorderSize);
 
 let newGridButton = document.querySelector("button#new-grid-btn");
-let gridLinesButton = document.querySelector("button#grid-lines-btn");
 let colorfulButton = document.querySelector("button#colorful-btn");
 let darkeningButton = document.querySelector("button#darkening-btn");
 
