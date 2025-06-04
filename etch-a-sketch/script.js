@@ -31,26 +31,28 @@ function increaseOpacity(element) {
 }
 
 function paintSquare(event) {
-    if (event.shiftKey) {
+    if (event.ctrlKey) {
         event.target.style.backgroundColor = EMPTY_COLOR;
         return;
     }
 
-    if (!colorful && !darkening) {
-        event.target.style.backgroundColor = BLACK_COLOR;
-    }
-    else if (!colorful && darkening) {
-        increaseOpacity(event.target);
-    }
-    else if (colorful && !darkening) {
-        event.target.style.backgroundColor = getRandomRGB();
-    }
-    else if (colorful && darkening) {
-        if (event.target.style.backgroundColor === EMPTY_COLOR)
-            event.target.style.backgroundColor = getRandomRGB(0.1);
-        else
+    if (event.shiftKey) {
+        if (!colorful && !darkening) {
+            event.target.style.backgroundColor = BLACK_COLOR;
+        }
+        else if (!colorful && darkening) {
             increaseOpacity(event.target);
-    } 
+        }
+        else if (colorful && !darkening) {
+            event.target.style.backgroundColor = getRandomRGB();
+        }
+        else if (colorful && darkening) {
+            if (event.target.style.backgroundColor === EMPTY_COLOR)
+                event.target.style.backgroundColor = getRandomRGB(0.1);
+            else
+            increaseOpacity(event.target);
+        } 
+    }
     
 }
 
