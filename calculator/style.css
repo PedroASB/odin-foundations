@@ -3,10 +3,80 @@
 *::after {
     margin: 0;
     padding: 0;
+    /* border: 2px solid red; */
 }
 
 body {
     height: 100vh;
     margin: 0;
     display: flex;
+}
+
+#header {
+    flex: 0 1 15vw;
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#header #main-title {
+    color: aliceblue;
+    font-size: 28px;
+    margin-top: 200px;
+}
+
+#content {
+    background-color: rgb(56, 56, 56);
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+}
+
+#display {
+    flex: 1 1 60px;
+    display: flex;
+    background-color: rgb(64, 104, 105);
+    margin: 16px;
+    padding: 16px;
+    border-radius: 16px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#display #output {
+    margin: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 32px;
+
+}
+
+#calc-buttons {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+#calc-buttons .row {
+    display: flex;
+}
+
+
+#calc-buttons button {
+    margin: 16px;
+    padding: 16px;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-size: 22px;
 }
