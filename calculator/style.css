@@ -40,21 +40,29 @@ body {
 }
 
 #display {
-    flex: 1 1 60px;
+    flex: 1 1 80px;
     display: flex;
-    background-color: rgb(64, 104, 105);
+    flex-direction: column;
+    background-color: rgb(43, 83, 83);
     margin: 16px;
     padding: 16px;
     border-radius: 16px;
-    align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: flex-end;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#display #history {
+    margin: 4px;
+    color: rgb(190, 193, 196);
+    font-size: 16px;
+
 }
 
 #display #output {
-    margin: 8px;
-    font-family: 'Courier New', Courier, monospace;
+    margin: 4px;
+    color: aliceblue;
     font-size: 32px;
-
 }
 
 #calc-buttons {
