@@ -15,9 +15,10 @@ function clearHistory() {
 }
 
 function clearCalculator() {
-    displayOutput(0);
     clearHistory();
+    displayOutput(0);
     stack.clear();
+    stack.push(0);
     hasResultBuffer = false;
 }
 
@@ -39,7 +40,9 @@ function operate(firstOperand, secondOperand, operator) {
             result = firstOperand * secondOperand;
             break;
         case DIVIDE_OPERATOR:
-            result = secondOperand === 0? DIVISION_BY_ZERO_ERROR : firstOperand / secondOperand;
+            result = secondOperand === 0 ? 
+                     MATH_ERROR :
+                     firstOperand / secondOperand;
             break;
         default:
             return; // check this
@@ -94,7 +97,7 @@ function appendDigit(event, digit) {
 }
 
 function handleUnaryOperator(event, operator) {
-    if (!isNumber(stack.peek())) return;
+    if (stack.isEmpty() || !isNumber(stack.peek())) return;
     currentNumber = stack.pop();
 
     switch (operator) {
@@ -111,6 +114,7 @@ function handleUnaryOperator(event, operator) {
 }
 
 function handleBinaryOperator(event, operator) {
+    if (stack.isEmpty()) return;
 
     if (isOperator(stack.peek())) {
         stack.pop();
@@ -135,13 +139,10 @@ function handleEquals() {
 
     let result = operate(firstOperand, secondOperand, operator);
 
-    /**
-     * @TODO refactor this
-     */
-    if (result === DIVISION_BY_ZERO_ERROR) {
+    if (result === MATH_ERROR) {
         clearCalculator();
         displayHistory(`${firstOperand} ${operator} ${secondOperand}`);
-        displayOutput(result);
+        displayOutput(MATH_ERROR);
         return;
     }
 
@@ -149,7 +150,6 @@ function handleEquals() {
     displayOutput(result);
     
     stack.push(result);
-
     hasResultBuffer = true;
 }
 
@@ -182,7 +182,7 @@ function initializeCalculator() {
 
 
 // Global constants and variables
-const DIVISION_BY_ZERO_ERROR = "Error";
+const MATH_ERROR = "Math Error";
 const PLUS_OPERATOR = "+";
 const MINUS_OPERATOR = "-";
 const TIMES_OPERATOR = "*";
