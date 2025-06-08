@@ -23,32 +23,7 @@ function clearCalculator() {
 }
 
 function operate(firstOperand, secondOperand, operator) {
-    let result;
-
-    /**
-     * @TODO refactor this function
-     */
-
-    switch (operator) {
-        case PLUS_OPERATOR:
-            result = firstOperand + secondOperand;
-            break;
-        case MINUS_OPERATOR:
-            result = firstOperand - secondOperand;
-            break;
-        case TIMES_OPERATOR:
-            result = firstOperand * secondOperand;
-            break;
-        case DIVIDE_OPERATOR:
-            result = secondOperand === 0 ? 
-                     MATH_ERROR :
-                     firstOperand / secondOperand;
-            break;
-        default:
-            return; // check this
-    }
-
-    return result;
+    return operations[operator](firstOperand, secondOperand);
 }
 
 function isNumber(item) {
@@ -212,6 +187,14 @@ let stack = {
         this.content = [];
     }
 };
+let operations = {
+    [PLUS_OPERATOR]: (firstOperand, secondOperand) => firstOperand + secondOperand,
+    [MINUS_OPERATOR]: (firstOperand, secondOperand) => firstOperand - secondOperand,
+    [TIMES_OPERATOR]: (firstOperand, secondOperand) => firstOperand * secondOperand,
+    [DIVIDE_OPERATOR]: (firstOperand, secondOperand) => secondOperand === 0 ? 
+                                                        MATH_ERROR :
+                                                        firstOperand / secondOperand
+}
 
 
 // Begin
