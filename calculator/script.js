@@ -67,21 +67,13 @@ function isOperator(item) {
 function appendDigit(event, digit) {
     let currentNumber;
 
-    /**
-     * @TODO refactor this
-     */
-    if (hasResultBuffer && isNumber(stack.peek())) {
-        stack.pop();
-        currentNumber = 0;
-    } 
-    else if (stack.isEmpty() || isOperator(stack.peek())) {
-        currentNumber = 0;
-    }
-    else if (isNumber(stack.peek())) {
+    if (isNumber(stack.peek())) {
         currentNumber = stack.pop();
+        if (hasResultBuffer) currentNumber = 0;
     }
-
-    hasResultBuffer = false;
+    else if (isOperator(stack.peek()) || stack.isEmpty()) {
+        currentNumber = 0;
+    }
 
 
     if (Number.isInteger(currentNumber)) {
@@ -97,10 +89,28 @@ function appendDigit(event, digit) {
     }
 
     stack.push(currentNumber);
+    hasResultBuffer = false;
     displayOutput(currentNumber);
 }
 
-function handleOperator(event, operator) {
+function handleUnaryOperator(event, operator) {
+    if (!isNumber(stack.peek())) return;
+    currentNumber = stack.pop();
+
+    switch (operator) {
+        case PERCENT_OPERATOR:
+            currentNumber /= 100;
+            break;
+        case PLUS_MINUS_OPERATOR:
+            currentNumber = -currentNumber;
+            break;
+    }
+
+    stack.push(currentNumber);
+    displayOutput(currentNumber);
+}
+
+function handleBinaryOperator(event, operator) {
 
     if (isOperator(stack.peek())) {
         stack.pop();
@@ -140,7 +150,6 @@ function handleEquals() {
     
     stack.push(result);
 
-    console.log("handleEquals: RESULT =", result);
     hasResultBuffer = true;
 }
 
@@ -150,13 +159,17 @@ function initializeCalculator() {
     let minusButton = document.querySelector("#minus");
     let timesButton = document.querySelector("#times");
     let divideButton = document.querySelector("#divide");
+    let percentButton = document.querySelector("#percent");
+    let plusMinusButton = document.querySelector("#plus-minus");
     let equalsButton = document.querySelector("#equals");
 
     clearButton.addEventListener("mousedown", clearCalculator);
-    plusButton.addEventListener("mousedown", (event) => handleOperator(event, PLUS_OPERATOR));
-    minusButton.addEventListener("mousedown", (event) => handleOperator(event, MINUS_OPERATOR));
-    timesButton.addEventListener("mousedown", (event) => handleOperator(event, TIMES_OPERATOR));
-    divideButton.addEventListener("mousedown", (event) => handleOperator(event, DIVIDE_OPERATOR));
+    plusButton.addEventListener("mousedown", (event) => handleBinaryOperator(event, PLUS_OPERATOR));
+    minusButton.addEventListener("mousedown", (event) => handleBinaryOperator(event, MINUS_OPERATOR));
+    timesButton.addEventListener("mousedown", (event) => handleBinaryOperator(event, TIMES_OPERATOR));
+    divideButton.addEventListener("mousedown", (event) => handleBinaryOperator(event, DIVIDE_OPERATOR));
+    percentButton.addEventListener("mousedown", (event) => handleUnaryOperator(event, PERCENT_OPERATOR));
+    plusMinusButton.addEventListener("mousedown", (event) => handleUnaryOperator(event, PLUS_MINUS_OPERATOR));
     equalsButton.addEventListener("mousedown", handleEquals);
 
     for (let digit = 0; digit <= 9; digit++) {
@@ -174,6 +187,8 @@ const PLUS_OPERATOR = "+";
 const MINUS_OPERATOR = "-";
 const TIMES_OPERATOR = "*";
 const DIVIDE_OPERATOR = "/";
+const PERCENT_OPERATOR = "%";
+const PLUS_MINUS_OPERATOR = "+-";
 let hasResultBuffer;
 let stack = {
     content: [],
