@@ -37,32 +37,46 @@ body {
 #calculator {
     display: flex;
     flex-direction: column;
+    padding: 16px;
+    border-radius: 32px;
+    background-color: rgb(32, 32, 32);
 }
 
 #display {
-    flex: 1 1 80px;
+    flex: 1 1 100px;
     display: flex;
     flex-direction: column;
-    background-color: rgb(43, 83, 83);
-    margin: 16px;
+    margin: 12px;
     padding: 16px;
     border-radius: 16px;
     justify-content: center;
     align-items: flex-end;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Inter", sans-serif;
+    background-color: rgb(32, 32, 32);
+    /* background-color: rgb(43, 83, 83); */
 }
 
 #display #history {
-    margin: 4px;
+    margin: 2px;
     color: rgb(190, 193, 196);
-    font-size: 16px;
+    font-size: 20px;
+    min-width: 30px;
+    min-height: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 
 }
 
 #display #output {
-    margin: 4px;
+    margin: 2px;
     color: aliceblue;
-    font-size: 32px;
+    font-size: 48px;
+    min-width: 60px;
+    min-height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 #calc-buttons {
@@ -75,16 +89,26 @@ body {
     display: flex;
 }
 
-
 #calc-buttons button {
-    margin: 16px;
-    padding: 16px;
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* font-family: 'Courier New', Courier, monospace; */
-    font-size: 22px;
+    margin: 6px;
+    padding: 16px;
+    width: 70px;
+    height: 70px;
+    border-radius: 360px;
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    background-color: rgb(63, 63, 63);
+    color: aliceblue;
+}
+
+#row-1 button {
+    background-color: gray;
+}
+
+#calc-buttons button.operator, #calc-buttons button#equals {
+    background-color: rgb(255, 153, 0);
 }

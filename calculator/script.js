@@ -158,12 +158,13 @@ function initializeCalculator() {
 
 // Global constants and variables
 const MATH_ERROR = "Math Error";
-const PLUS_OPERATOR = "+";
-const MINUS_OPERATOR = "-";
-const TIMES_OPERATOR = "*";
-const DIVIDE_OPERATOR = "/";
-const PERCENT_OPERATOR = "%";
-const PLUS_MINUS_OPERATOR = "+-";
+const PLUS_OPERATOR = "\u002B";
+const MINUS_OPERATOR = "\u2212";
+const TIMES_OPERATOR = "\u00D7";
+const DIVIDE_OPERATOR = "\u00F7";
+const PERCENT_OPERATOR = "\u0025";
+const PLUS_MINUS_OPERATOR = "\u00B1";
+
 let hasResultBuffer;
 let stack = {
     content: [],
