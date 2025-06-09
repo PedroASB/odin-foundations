@@ -1,17 +1,17 @@
 function displayOutput(content) {
-    document.querySelector("#output").innerText = content;
+    output.innerText = content;
 }
 
 function clearOutput() {
-    document.querySelector("#output").innerText = "";
+    output.innerText = "";
 }
 
 function displayHistory(content) {
-    document.querySelector("#history").innerText = content;
+    history.innerText = content;
 }
 
 function clearHistory() {
-    document.querySelector("#history").innerText = "";
+    history.innerText = "";
 }
 
 function clearCalculator() {
@@ -68,6 +68,7 @@ function appendDigit(event, digit) {
 
     stack.push(currentNumber);
     hasResultBuffer = false;
+    clearHistory();
     displayOutput(currentNumber);
 }
 
@@ -85,6 +86,7 @@ function handleUnaryOperator(event, operator) {
     }
 
     stack.push(currentNumber);
+    clearHistory();
     displayOutput(currentNumber);
 }
 
@@ -97,6 +99,7 @@ function handleBinaryOperator(event, operator) {
         return;
     }
 
+    clearHistory();
     stack.push(operator);
 }
 
@@ -129,6 +132,8 @@ function handleEquals() {
 }
 
 function initializeCalculator() {
+    history = document.querySelector("#history");
+    output = document.querySelector("#output");
     let clearButton = document.querySelector("#clear");
     let plusButton = document.querySelector("#plus");
     let minusButton = document.querySelector("#minus");
@@ -164,8 +169,7 @@ const TIMES_OPERATOR = "\u00D7";
 const DIVIDE_OPERATOR = "\u00F7";
 const PERCENT_OPERATOR = "\u0025";
 const PLUS_MINUS_OPERATOR = "\u00B1";
-
-let hasResultBuffer;
+let history, output, hasResultBuffer;
 let stack = {
     content: [],
     push(...items) {

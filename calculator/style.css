@@ -112,3 +112,7 @@ body {
 #calc-buttons button.operator, #calc-buttons button#equals {
     background-color: rgb(255, 153, 0);
 }
+
+button#delete img {
+    width: 42px;
+}
