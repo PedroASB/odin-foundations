@@ -175,7 +175,7 @@ function handleDot() {
     if (stack.isEmpty() || 
         !isNumber(stack.peek()) || 
         stack.peek().toString().includes('.')) {
-            return;
+        return;
     }
 
     currentNumber = stack.pop();
@@ -196,7 +196,8 @@ function handleDelete() {
 
     if (isNumber(stack.peek())) {
         currentNumber = stack.pop();
-        currentNumber = currentNumber.slice(0, -1);
+        currentNumber = currentNumber.toString().slice(0, -1);
+        if (currentNumber === '') currentNumber = 0;
         stack.push(currentNumber);
         clearHistory();
         displayOutput(currentNumber);
