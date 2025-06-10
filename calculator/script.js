@@ -54,7 +54,7 @@ function clearCalculator() {
 }
 
 function operate(firstOperand, operator, secondOperand) {
-    return operations[operator](firstOperand, secondOperand);
+    return operations[operator](Number(firstOperand), Number(secondOperand));
 }
 
 function isNumber(item) {
@@ -140,7 +140,7 @@ function handleEquals() {
     let operator = stack.pop();
     let firstOperand = stack.pop();
 
-    let result = operate(Number(firstOperand), operator, Number(secondOperand));
+    let result = operate(firstOperand, operator, secondOperand).toString();
 
     if (result === MATH_ERROR) {
         clearCalculator();
@@ -168,6 +168,25 @@ function handleDot() {
     stack.push(currentNumber);
     clearHistory();
     displayOutput(currentNumber);
+    hasResultBuffer = false;
+}
+
+function handleDelete() {
+    if (stack.isEmpty()) return;
+
+    if (isOperator(stack.peek())) {
+        stack.pop();
+        return;
+    }
+
+    if (isNumber(stack.peek())) {
+        currentNumber = stack.pop();
+        currentNumber = currentNumber.slice(0, -1);
+        stack.push(currentNumber);
+        clearHistory();
+        displayOutput(currentNumber);
+        hasResultBuffer = false;
+    }
 }
 
 function initializeCalculator() {
@@ -182,6 +201,7 @@ function initializeCalculator() {
     let plusMinusButton = document.querySelector("#plus-minus");
     let equalsButton = document.querySelector("#equals");
     let dotButton  = document.querySelector("#dot");
+    let deleteButton = document.querySelector("#delete");
 
     clearButton.addEventListener("mousedown", clearCalculator);
     plusButton.addEventListener("mousedown", (event) => handleBinaryOperator(event, PLUS_OPERATOR));
@@ -192,6 +212,7 @@ function initializeCalculator() {
     plusMinusButton.addEventListener("mousedown", (event) => handleUnaryOperator(event, PLUS_MINUS_OPERATOR));
     equalsButton.addEventListener("mousedown", handleEquals);
     dotButton.addEventListener("mousedown", handleDot);
+    deleteButton.addEventListener("mousedown", handleDelete);
 
     for (let digit = 0; digit <= 9; digit++) {
         let numberButton = document.querySelector(`#digit-${digit}`);
@@ -242,6 +263,9 @@ function handleKeyDown(event) {
     else if (event.key === DELETE_KEY) {
         clearCalculator();
     }
+    else if (event.key === BACKSPACE_KEY) {
+        handleDelete();
+    }
 }
 
 
@@ -249,6 +273,7 @@ function handleKeyDown(event) {
 const EQUALS_KEY = "=";
 const ENTER_KEY = "Enter";
 const DOT_KEY = ".";
+const BACKSPACE_KEY = "Backspace";
 const DELETE_KEY = "Delete";
 const MATH_ERROR = "Math Error";
 const PLUS_OPERATOR = "\u002B";
