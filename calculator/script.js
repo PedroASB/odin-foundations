@@ -54,7 +54,21 @@ function clearCalculator() {
 }
 
 function operate(firstOperand, operator, secondOperand) {
-    return operations[operator](Number(firstOperand), Number(secondOperand));
+    let result = operations[operator](Number(firstOperand), Number(secondOperand));
+    result = result.toString();
+
+    if (result === MATH_ERROR) {
+        clearCalculator();
+        displayHistory(firstOperand, operator, secondOperand);
+        displayOutput(MATH_ERROR);
+        return;
+    }
+
+    displayHistory(firstOperand, operator, secondOperand);
+    displayOutput(result);
+    
+    stack.push(result);
+    hasResultBuffer = true;
 }
 
 function isNumber(item) {
@@ -115,24 +129,38 @@ function handleUnaryOperator(event, operator) {
     displayOutput(currentNumber);
 }
 
-function handleBinaryOperator(event, operator) {
+function handleBinaryOperator(event, currentOperator) {
     if (stack.isEmpty()) return;
 
     if (isOperator(stack.peek())) {
         stack.pop();
-        stack.push(operator);
+        stack.push(currentOperator);
+        return;
+    }
+
+    if (stack.size() >= 3 && 
+        isNumber(stack.peek(0)) &&
+        isOperator(stack.peek(1)) &&
+        isNumber(stack.peek(2))) {
+        
+        let secondOperand = stack.pop();
+        let previousOperator = stack.pop();
+        let firstOperand = stack.pop();
+
+        operate(firstOperand, previousOperator, secondOperand);
+        stack.push(currentOperator);
         return;
     }
 
     clearHistory();
-    stack.push(operator);
+    stack.push(currentOperator);
 }
 
 function handleEquals() {
-    /**
-     * @TODO check if there are [number operator number] in the stack
-     */
-    if (stack.size() < 3) {
+    if (stack.size() < 3 || 
+        !isNumber(stack.peek(0)) || 
+        !isOperator(stack.peek(1)) || 
+        !isNumber(stack.peek(2))) {
         return;
     }
 
@@ -140,20 +168,7 @@ function handleEquals() {
     let operator = stack.pop();
     let firstOperand = stack.pop();
 
-    let result = operate(firstOperand, operator, secondOperand).toString();
-
-    if (result === MATH_ERROR) {
-        clearCalculator();
-        displayHistory(firstOperand, operator, secondOperand);
-        displayOutput(MATH_ERROR);
-        return;
-    }
-
-    displayHistory(firstOperand, operator, secondOperand);
-    displayOutput(result);
-    
-    stack.push(result);
-    hasResultBuffer = true;
+    operate(firstOperand, operator, secondOperand);
 }
 
 function handleDot() {
