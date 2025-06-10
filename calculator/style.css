@@ -37,17 +37,19 @@ body {
 #calculator {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 16px;
     border-radius: 32px;
     background-color: rgb(32, 32, 32);
 }
 
 #display {
-    flex: 1 1 100px;
+    flex: 1 1 120px;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
     margin: 12px;
-    padding: 16px;
+    padding: 8px;
     border-radius: 16px;
     justify-content: center;
     align-items: flex-end;
@@ -57,32 +59,33 @@ body {
 }
 
 #display #history {
-    margin: 2px;
-    color: rgb(190, 193, 196);
-    font-size: 20px;
-    min-width: 30px;
-    min-height: 30px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-
+    margin: 2px;
+    min-width: 30px;
+    min-height: 30px;
+    color: rgb(190, 193, 196);
+    font-size: 20px;
 }
 
 #display #output {
-    margin: 2px;
-    color: aliceblue;
-    font-size: 48px;
-    min-width: 60px;
-    min-height: 60px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin: 2px;
+    min-width: 60px;
+    min-height: 60px;
+    color: rgb(255, 255, 255);
+    font-size: 52px;
 }
 
 #calc-buttons {
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
 }
 
 #calc-buttons .row {
@@ -94,15 +97,14 @@ body {
     align-items: center;
     justify-content: center;
     margin: 6px;
-    padding: 16px;
     width: 70px;
     height: 70px;
     border-radius: 360px;
     border: none;
     font-family: "Inter", sans-serif;
-    font-size: 32px;
     background-color: rgb(63, 63, 63);
-    color: aliceblue;
+    color: rgb(255, 255, 255);
+    font-size: 32px;
 }
 
 #row-1 button {
@@ -111,8 +113,19 @@ body {
 
 #calc-buttons button.operator, #calc-buttons button#equals {
     background-color: rgb(255, 153, 0);
+    padding-bottom: 8px;
+    font-size: 54px;
+    font-weight: 300;
+}
+
+button#delete {
+    padding-right: 4px;
 }
 
 button#delete img {
     width: 42px;
+}
+
+button#plus-minus img {
+    width: 28px;
 }

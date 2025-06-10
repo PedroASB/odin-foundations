@@ -1,13 +1,30 @@
+function formatNumber(number) {
+    return Math.abs(number) <= maxNumber ? 
+           numberFormatter.format(number) : 
+           number.toExponential(3);
+}
+
 function displayOutput(content) {
+    if (isNumber(content)) content = formatNumber(content);
+    let contentSize = content.toString().length;
+    output.style.fontSize = contentSize > 10 ?
+                            `${520 * (1 / contentSize)}px` :
+                            "52px";
     output.innerText = content;
+}
+
+
+function displayHistory(firstOperand, operator, secondOperand) {
+    let content = `${formatNumber(firstOperand)} ${operator} ${formatNumber(secondOperand)}`;
+    let contentSize = content.toString().length;
+    history.style.fontSize = contentSize > 22 ?
+                             `${528 * (1 / contentSize)}px` :
+                             "24px";
+    history.innerText = content;
 }
 
 function clearOutput() {
     output.innerText = "";
-}
-
-function displayHistory(content) {
-    history.innerText = content;
 }
 
 function clearHistory() {
@@ -22,7 +39,7 @@ function clearCalculator() {
     hasResultBuffer = false;
 }
 
-function operate(firstOperand, secondOperand, operator) {
+function operate(firstOperand, operator, secondOperand) {
     return operations[operator](firstOperand, secondOperand);
 }
 
@@ -54,9 +71,11 @@ function appendDigit(event, digit) {
     }
 
 
+    let nextNumber = currentNumber * 10 + digit; 
+
     if (Number.isInteger(currentNumber)) {
         // currentNumber is an integer
-        currentNumber = currentNumber * 10 + digit;
+        currentNumber = Math.abs(nextNumber) <= maxNumber ? nextNumber : currentNumber;
     }
     else {
         // currentNumber is a float number
@@ -115,16 +134,16 @@ function handleEquals() {
     let operator = stack.pop();
     let firstOperand = stack.pop();
 
-    let result = operate(firstOperand, secondOperand, operator);
+    let result = operate(firstOperand, operator, secondOperand);
 
     if (result === MATH_ERROR) {
         clearCalculator();
-        displayHistory(`${firstOperand} ${operator} ${secondOperand}`);
+        displayHistory(firstOperand, operator, secondOperand);
         displayOutput(MATH_ERROR);
         return;
     }
 
-    displayHistory(`${firstOperand} ${operator} ${secondOperand}`);
+    displayHistory(firstOperand, operator, secondOperand);
     displayOutput(result);
     
     stack.push(result);
@@ -169,6 +188,10 @@ const TIMES_OPERATOR = "\u00D7";
 const DIVIDE_OPERATOR = "\u00F7";
 const PERCENT_OPERATOR = "\u0025";
 const PLUS_MINUS_OPERATOR = "\u00B1";
+const maxNumber = 9_999_999_999_999;
+const numberFormatter = Intl.NumberFormat("en-US", {
+    maximumSignificantDigits: 13,
+});
 let history, output, hasResultBuffer;
 let stack = {
     content: [],
