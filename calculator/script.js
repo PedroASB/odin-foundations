@@ -176,11 +176,50 @@ function initializeCalculator() {
         numberButton.addEventListener("mousedown", (event) => appendDigit(event, digit));
     }
 
+    document.addEventListener("keydown", handleKeyDown);
+
     clearCalculator();
+}
+
+function isNumberKey(key) {
+    return Number.isInteger(parseInt(key));
+}
+
+function isResultKey(key) {
+    return key === EQUALS_KEY || key === ENTER_KEY;
+}
+
+function isBinaryOperatorKey(key) {
+    switch (key) {
+        case "+":
+            return PLUS_OPERATOR;
+        case "-":
+            return MINUS_OPERATOR;
+        case "*":
+            return TIMES_OPERATOR;
+        case "/":
+            return DIVIDE_OPERATOR;
+    }
+    return false;
+}
+
+function handleKeyDown(event) {
+    let operator;
+    if (isNumberKey(event.key)) {
+        appendDigit(event, parseInt(event.key));
+    }
+    else if (operator = isBinaryOperatorKey(event.key)) {
+        handleBinaryOperator(event, operator);
+    }
+    else if (isResultKey(event.key)) {
+        handleEquals();
+    }
 }
 
 
 // Global constants and variables
+const EQUALS_KEY = "=";
+const ENTER_KEY = "Enter";
 const MATH_ERROR = "Math Error";
 const PLUS_OPERATOR = "\u002B";
 const MINUS_OPERATOR = "\u2212";
