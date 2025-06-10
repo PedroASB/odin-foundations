@@ -1,7 +1,22 @@
 function formatNumber(number) {
-    return Math.abs(number) <= maxNumber ? 
-           numberFormatter.format(number) : 
-           number.toExponential(3);
+    if (Math.abs(number) > maxNumber) { 
+        return Number(number).toExponential(3);
+    }
+
+    let integerPart, fractionalPart, formatedNumber;
+
+    [integerPart, fractionalPart] = number.toString().split('.');
+    formatedNumber = numberFormatter.format(integerPart);
+
+    if (number.toString().includes('.')) {
+        formatedNumber += '.';
+    }
+
+    if (fractionalPart) {
+        formatedNumber += fractionalPart;
+    }
+
+    return formatedNumber;
 }
 
 function displayOutput(content) {
@@ -12,7 +27,6 @@ function displayOutput(content) {
                             "52px";
     output.innerText = content;
 }
-
 
 function displayHistory(firstOperand, operator, secondOperand) {
     let content = `${formatNumber(firstOperand)} ${operator} ${formatNumber(secondOperand)}`;
@@ -44,7 +58,7 @@ function operate(firstOperand, operator, secondOperand) {
 }
 
 function isNumber(item) {
-    return typeof(item) === "number";
+    return !Number.isNaN(Number(item));
 }
 
 function isOperator(item) {
@@ -66,29 +80,21 @@ function appendDigit(event, digit) {
         currentNumber = stack.pop();
         if (hasResultBuffer) currentNumber = 0;
     }
-    else if (isOperator(stack.peek()) || stack.isEmpty()) {
+    else if (stack.isEmpty() || isOperator(stack.peek())) {
         currentNumber = 0;
     }
 
-
-    let nextNumber = currentNumber * 10 + digit; 
-
-    if (Number.isInteger(currentNumber)) {
-        // currentNumber is an integer
-        currentNumber = Math.abs(nextNumber) <= maxNumber ? nextNumber : currentNumber;
+    if (currentNumber === 0) {
+        currentNumber = `${digit}`;
     }
-    else {
-        // currentNumber is a float number
-
-        /**
-         * @TODO handle float numbers
-         */
+    else if (currentNumber.length < digitsLimit) {
+        currentNumber = currentNumber + `${digit}`;
     }
 
     stack.push(currentNumber);
-    hasResultBuffer = false;
     clearHistory();
     displayOutput(currentNumber);
+    hasResultBuffer = false;
 }
 
 function handleUnaryOperator(event, operator) {
@@ -134,7 +140,7 @@ function handleEquals() {
     let operator = stack.pop();
     let firstOperand = stack.pop();
 
-    let result = operate(firstOperand, operator, secondOperand);
+    let result = operate(Number(firstOperand), operator, Number(secondOperand));
 
     if (result === MATH_ERROR) {
         clearCalculator();
@@ -150,6 +156,20 @@ function handleEquals() {
     hasResultBuffer = true;
 }
 
+function handleDot() {
+    if (stack.isEmpty() || 
+        !isNumber(stack.peek()) || 
+        stack.peek().toString().includes('.')) {
+            return;
+    }
+
+    currentNumber = stack.pop();
+    currentNumber += '.';
+    stack.push(currentNumber);
+    clearHistory();
+    displayOutput(currentNumber);
+}
+
 function initializeCalculator() {
     history = document.querySelector("#history");
     output = document.querySelector("#output");
@@ -161,6 +181,7 @@ function initializeCalculator() {
     let percentButton = document.querySelector("#percent");
     let plusMinusButton = document.querySelector("#plus-minus");
     let equalsButton = document.querySelector("#equals");
+    let dotButton  = document.querySelector("#dot");
 
     clearButton.addEventListener("mousedown", clearCalculator);
     plusButton.addEventListener("mousedown", (event) => handleBinaryOperator(event, PLUS_OPERATOR));
@@ -170,6 +191,7 @@ function initializeCalculator() {
     percentButton.addEventListener("mousedown", (event) => handleUnaryOperator(event, PERCENT_OPERATOR));
     plusMinusButton.addEventListener("mousedown", (event) => handleUnaryOperator(event, PLUS_MINUS_OPERATOR));
     equalsButton.addEventListener("mousedown", handleEquals);
+    dotButton.addEventListener("mousedown", handleDot);
 
     for (let digit = 0; digit <= 9; digit++) {
         let numberButton = document.querySelector(`#digit-${digit}`);
@@ -214,12 +236,20 @@ function handleKeyDown(event) {
     else if (isResultKey(event.key)) {
         handleEquals();
     }
+    else if (event.key === DOT_KEY) {
+        handleDot();
+    }
+    else if (event.key === DELETE_KEY) {
+        clearCalculator();
+    }
 }
 
 
 // Global constants and variables
 const EQUALS_KEY = "=";
 const ENTER_KEY = "Enter";
+const DOT_KEY = ".";
+const DELETE_KEY = "Delete";
 const MATH_ERROR = "Math Error";
 const PLUS_OPERATOR = "\u002B";
 const MINUS_OPERATOR = "\u2212";
@@ -228,9 +258,8 @@ const DIVIDE_OPERATOR = "\u00F7";
 const PERCENT_OPERATOR = "\u0025";
 const PLUS_MINUS_OPERATOR = "\u00B1";
 const maxNumber = 9_999_999_999_999;
-const numberFormatter = Intl.NumberFormat("en-US", {
-    maximumSignificantDigits: 13,
-});
+const digitsLimit = 13;
+const numberFormatter = Intl.NumberFormat("en-US");
 let history, output, hasResultBuffer;
 let stack = {
     content: [],
