@@ -6,15 +6,35 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- <div id="header">
-        <div id="main-title">My Calculator</div>
-    </div> -->
+    <div id="header">
+        <div id="logo">
+            <h1 id="main-title">CALC-IO</h1>
+            <h4 id="main-subtitle">Web calculator</h4>
+        </div>
+        <div class="container">
+            <div class="subcontainer" id="overview">
+                <h3 class="section-title">Overview</h3>
+                <div>
+                    <p>This is a traditional calculator that supports the four basic operations. There is also a <strong>%</strong> operator to divide by 100 and a <strong>+/-</strong> operator to negate the current number.</p>
+                    <p>It’s possible to entry numbers and operators using the mouse or the keyboard. Use <strong>Backspace</strong> to undo the last input and <strong>Delete</strong> to clear all data.</p>
+                    <p>For more information about the project and how to use the calculator, check the project's <a href="https://github.com/PedroASB/odin-foundations/tree/main/calculator#readme">repository</a>.</p>
+                </div>
+            </div>
+            <div class="subcontainer" id="styles">
+                <h3 class="section-title">Style</h3>
+                <div id="buttons">
+                    <button id="modern-btn">Modern</button>
+                    <button id="classic-btn">Classic</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer"><a href="https://github.com/PedroASB">&copy; Pedro Augusto</a></div>
+    </div>
     
     <div id="content">
         <div id="calculator">

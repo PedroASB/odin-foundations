@@ -13,17 +13,109 @@ body {
 }
 
 #header {
-    flex: 0 1 15vw;
-    background-color: black;
+    flex: 0 1 20vw;
+    background-color: rgb(37, 37, 37);
     padding: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    border-right: 8px solid rgba(48, 48, 48, 0.452);
+}
+
+#header #logo {
+    font-family: "Aldrich", sans-serif;
+    margin-top: 8vh;
+    margin-bottom: 96px;
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #header #main-title {
-    color: aliceblue;
-    font-size: 28px;
-    margin-top: 200px;
+    font-size: 58px;
+    font-weight: bold;
+}
+
+#header #main-subtitle {
+    font-weight: lighter;
+    font-size: 18px;
+}
+
+#header .container {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+#header .container .subcontainer {
+    max-width: 15vw;
+    min-width: 320px;
+}
+
+#header .section-title {
+    margin: 8px 0;
+    font-size: 22px;
+}
+
+#header #overview p {
+    margin-bottom: 16px;
+}
+
+#header #overview a {
+    text-decoration: none;
+    color: #96befa;
+}
+
+#header #overview a:hover {
+    text-decoration: underline;
+}
+
+
+#header #styles {
+    display: flex;
+    flex-direction: column;
+}
+
+#header #styles #buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+}
+
+#header button {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 8px;
+    width: 120px;
+    font-weight: bold;
+    border: none;
+}
+
+#header #modern-btn {
+    background-color: rgb(168, 194, 218);
+}
+
+#header #classic-btn {
+    background-color: rgb(233, 233, 233);
+}
+
+#header .footer {
+    flex: 0 1 auto;
+    padding: 4px;
+    font-size: 16px;
+}
+
+#header .footer a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
 }
 
 #content {
@@ -38,25 +130,25 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 12px;
+    padding: 16px;
     border-radius: 42px;
     background-color: rgb(32, 32, 32);
-    border: 8px solid rgba(59, 59, 59, 0.418);
+    border: 8px solid rgba(60, 60, 60, 0.25);
+    margin-right: 10vw;
 }
 
 #display {
     flex: 1 1 120px;
-    min-width: 300px;
+    min-width: 310px;
     display: flex;
     flex-direction: column;
-    margin: 12px;
+    margin: 12px 0;
     padding: 8px;
     border-radius: 16px;
     justify-content: center;
     align-items: flex-end;
     font-family: "Inter", sans-serif;
     background-color: rgb(32, 32, 32);
-    /* background-color: rgb(43, 83, 83); */
 }
 
 #display #history {

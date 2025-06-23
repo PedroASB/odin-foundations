@@ -284,6 +284,43 @@ function handleKeyDown(event) {
     }
 }
 
+function changeCalculatorStyle(event, style) {
+    const calculatorBackground = document.querySelector("#calculator");
+    const calculatorDisplay = document.querySelector("#display");
+    const calculatorButtons = Array.from(document.querySelectorAll("#calc-buttons button"));
+
+    switch (style) {
+        case MODERN_STYLE:
+            calculatorBackground.style.backgroundColor = "rgb(32, 32, 32)";
+            calculatorDisplay.style.backgroundColor = "rgb(32, 32, 32)";
+            
+            calculatorButtons.forEach((button) => {
+                button.style.borderRadius = "360px";
+            });
+            event.target.style.backgroundColor = "rgb(168, 194, 218)";
+            event.target.nextElementSibling.style.backgroundColor = "rgb(233, 233, 233)";
+            break;
+
+        case CLASSIC_STYLE:
+            calculatorBackground.style.backgroundColor = "rgb(236, 227, 209)";
+            calculatorDisplay.style.backgroundColor = "rgb(15, 117, 86)";
+            calculatorButtons.forEach((button) => {
+                button.style.borderRadius = "16px";
+            });
+            event.target.style.backgroundColor = "rgb(168, 194, 218)";
+            event.target.previousElementSibling.style.backgroundColor = "rgb(233, 233, 233)";
+            break;
+    }
+}
+
+function initializeInteractions() {
+    const modernButton = document.querySelector("#modern-btn");
+    const classicButton = document.querySelector("#classic-btn");
+
+    modernButton.addEventListener("click", (event) => changeCalculatorStyle(event, MODERN_STYLE));
+    classicButton.addEventListener("click", (event) => changeCalculatorStyle(event, CLASSIC_STYLE));
+}
+
 
 // Global constants and variables
 const EQUALS_KEY = "=";
@@ -300,6 +337,7 @@ const PERCENT_OPERATOR = "\u0025";
 const PLUS_MINUS_OPERATOR = "\u00B1";
 const maxNumber = 9_999_999_999_999;
 const digitsLimit = 13;
+const MODERN_STYLE = 1, CLASSIC_STYLE = 2;
 const numberFormatter = Intl.NumberFormat("en-US");
 let history, output, hasResultBuffer;
 let stack = {
@@ -336,3 +374,4 @@ let operations = {
 
 // Begin
 initializeCalculator();
+initializeInteractions();
