@@ -282,6 +282,12 @@ function handleKeyDown(event) {
     else if (event.key === BACKSPACE_KEY) {
         handleDelete();
     }
+    else if (event.key === SHIFT_KEY) {
+        handleUnaryOperator(event, PLUS_MINUS_OPERATOR);
+    }
+    else if (event.key === CTRL_KEY) {
+        handleUnaryOperator(event, PERCENT_OPERATOR);
+    }
 }
 
 function changeCalculatorStyle(event, style) {
@@ -328,6 +334,8 @@ const ENTER_KEY = "Enter";
 const DOT_KEY = ".";
 const BACKSPACE_KEY = "Backspace";
 const DELETE_KEY = "Delete";
+const SHIFT_KEY = "Shift";
+const CTRL_KEY = "Control";
 const MATH_ERROR = "Math Error";
 const PLUS_OPERATOR = "\u002B";
 const MINUS_OPERATOR = "\u2212";
