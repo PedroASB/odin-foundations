@@ -14,7 +14,7 @@ body {
 #header {
     flex: 0 1 20vw;
     background-color: rgb(37, 37, 37);
-    padding: 20px 40px;
+    padding: 15px 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,7 +28,7 @@ body {
 #header #logo {
     font-family: "Aldrich", sans-serif;
     margin-top: 8vh;
-    margin-bottom: 96px;
+    margin-bottom: 70px;
     flex: 0 1 auto;
     display: flex;
     flex-direction: column;
@@ -63,7 +63,7 @@ body {
     font-size: 22px;
 }
 
-#header #overview p {
+#header .subcontainer p {
     margin-bottom: 16px;
 }
 
@@ -225,20 +225,3 @@ button#plus-minus img {
 button:focus {
     outline: none;
 }
-
-/* #calc-buttons button:hover {
-    transition-duration: 0.2s;
-}
-
-#calc-buttons button.operator:hover,
-#calc-buttons button#equals:hover {
-    background-color: rgb(255, 189, 89);
-}
-
-#calc-buttons button:hover {
-    background-color: rgb(119, 119, 119);
-}
-
-#row-1 button:hover {
-    background-color: rgb(167, 167, 167);
-} */

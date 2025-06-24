@@ -384,7 +384,7 @@ function changeCalculatorStyle(style) {
             break;
 
         case MINT_STYLE:
-            calculator.style.padding = "0px";
+            calculator.style.padding = "4px";
             calculator.style.borderRadius = "16px";
             calculator.style.border = "8px solid rgba(132, 180, 125, 0.25)";
             calculator.style.backgroundColor = "rgb(178, 230, 185)";
