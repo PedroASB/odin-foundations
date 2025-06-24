@@ -101,7 +101,7 @@ function appendDigit(event, digit) {
     if (currentNumber === 0) {
         currentNumber = `${digit}`;
     }
-    else if (currentNumber.length < digitsLimit) {
+    else if (currentNumber.toString().length < digitsLimit) {
         currentNumber = currentNumber + `${digit}`;
     }
 
