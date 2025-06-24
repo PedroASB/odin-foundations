@@ -238,6 +238,7 @@ function initializeCalculator() {
     document.addEventListener("keydown", handleKeyDown);
 
     clearCalculator();
+    changeCalculatorStyle(MODERN_STYLE);
 }
 
 function isNumberKey(key) {
@@ -290,43 +291,158 @@ function handleKeyDown(event) {
     }
 }
 
-function changeCalculatorStyle(event, style) {
-    const calculatorBackground = document.querySelector("#calculator");
-    const calculatorDisplay = document.querySelector("#display");
+function changeCalculatorStyle(style) {
+    const calculator = document.querySelector("#calculator");
+    const display = document.querySelector("#display");
     const calculatorButtons = Array.from(document.querySelectorAll("#calc-buttons button"));
+    const history = document.querySelector("#history");
+    const displayOutput = document.querySelector("#output");
+    const firstRowButtons = Array.from(document.querySelectorAll("#row-1 button"));
+    const operatorsButtons = Array.from(document.querySelectorAll("#calc-buttons button.operator, #calc-buttons button#equals"));
 
     switch (style) {
         case MODERN_STYLE:
-            calculatorBackground.style.backgroundColor = "rgb(32, 32, 32)";
-            calculatorDisplay.style.backgroundColor = "rgb(32, 32, 32)";
-            
+            calculator.style.padding = "16px";
+            calculator.style.borderRadius = "42px";
+            calculator.style.border = "8px solid rgba(60, 60, 60, 0.25)";
+            calculator.style.backgroundColor = "rgb(32, 32, 32)";
+            display.style.backgroundColor = "rgb(32, 32, 32)";
+            history.style.color = "rgb(190, 193, 196)";
+            displayOutput.style.color = "rgb(255, 255, 255)";
             calculatorButtons.forEach((button) => {
+                button.style.margin = "6px";
+                button.style.width = "70px";
+                button.style.height = "70px";
                 button.style.borderRadius = "360px";
+                button.style.backgroundColor = "rgb(63, 63, 63)";
+                button.addEventListener("mouseenter", (event) => {
+                    event.target.style.backgroundColor = "rgb(119, 119, 119)";
+                });
+                button.addEventListener("mouseleave", (event) => {
+                    event.target.style.backgroundColor = "rgb(63, 63, 63)";
+                });
             });
-            event.target.style.backgroundColor = "rgb(168, 194, 218)";
-            event.target.nextElementSibling.style.backgroundColor = "rgb(233, 233, 233)";
+            firstRowButtons.forEach(button => {
+                button.style.backgroundColor = "rgb(128, 128, 128)";
+                button.addEventListener("mouseenter", (event) => {
+                    event.target.style.backgroundColor = "rgb(167, 167, 167)";
+                });
+                button.addEventListener("mouseleave", (event) => {
+                    event.target.style.backgroundColor = "rgb(128, 128, 128)";
+                });
+            });
+            operatorsButtons.forEach(button => {
+                button.style.backgroundColor = "rgb(255, 153, 0)";
+                button.addEventListener("mouseenter", (event) => {
+                    event.target.style.backgroundColor = "rgb(255, 189, 89)";
+                });
+                button.addEventListener("mouseleave", (event) => {
+                    event.target.style.backgroundColor = "rgb(255, 153, 0)";
+                });
+            });
             break;
 
         case CLASSIC_STYLE:
-            calculatorBackground.style.backgroundColor = "rgb(236, 227, 209)";
-            calculatorDisplay.style.backgroundColor = "rgb(15, 117, 86)";
+            calculator.style.padding = "16px";
+            calculator.style.borderRadius = "42px";
+            calculator.style.border = "8px solid rgba(60, 60, 60, 0.25)";
+            calculator.style.backgroundColor = "rgb(236, 227, 209)";
+            display.style.backgroundColor = "rgb(15, 117, 86)";
+            history.style.color = "rgb(190, 193, 196)";
+            displayOutput.style.color = "rgb(255, 255, 255)";
             calculatorButtons.forEach((button) => {
+                button.style.margin = "6px";
+                button.style.width = "70px";
+                button.style.height = "70px";
                 button.style.borderRadius = "16px";
+                button.style.backgroundColor = "rgb(87, 87, 87)";
+                button.addEventListener("mouseenter", (event) => {
+                    event.target.style.backgroundColor = "rgb(119, 119, 119)";
+                });
+                button.addEventListener("mouseleave", (event) => {
+                    event.target.style.backgroundColor = "rgb(87, 87, 87)";
+                });
             });
-            event.target.style.backgroundColor = "rgb(168, 194, 218)";
-            event.target.previousElementSibling.style.backgroundColor = "rgb(233, 233, 233)";
+            firstRowButtons.forEach(button => {
+                button.style.backgroundColor = "rgb(128, 128, 128)";
+                button.addEventListener("mouseenter", (event) => {
+                    event.target.style.backgroundColor = "rgb(167, 167, 167)";
+                });
+                button.addEventListener("mouseleave", (event) => {
+                    event.target.style.backgroundColor = "rgb(128, 128, 128)";
+                });
+            });
+            operatorsButtons.forEach(button => {
+                button.style.backgroundColor = "rgb(255, 153, 0)";
+                button.addEventListener("mouseenter", (event) => {
+                    event.target.style.backgroundColor = "rgb(255, 189, 89)";
+                });
+                button.addEventListener("mouseleave", (event) => {
+                    event.target.style.backgroundColor = "rgb(255, 153, 0)";
+                });
+            });
             break;
+
+        case MINT_STYLE:
+            calculator.style.padding = "0px";
+            calculator.style.borderRadius = "16px";
+            calculator.style.border = "8px solid rgba(132, 180, 125, 0.25)";
+            calculator.style.backgroundColor = "rgb(178, 230, 185)";
+            display.style.backgroundColor = "rgb(178, 230, 185)";
+            history.style.color = "rgb(69, 139, 73)";
+            displayOutput.style.color = "rgb(37, 73, 29)";
+            calculatorButtons.forEach((button) => {
+                button.style.margin = "1px";
+                button.style.width = "78px";
+                button.style.height = "78px";
+                button.style.borderRadius = "2px";
+                button.style.backgroundColor = "rgb(47, 158, 93)";
+                button.addEventListener("mouseenter", (event) => {
+                    event.target.style.backgroundColor = "rgb(85, 201, 133)";
+                });
+                button.addEventListener("mouseleave", (event) => {
+                    event.target.style.backgroundColor = "rgb(47, 158, 93)";
+                });
+            });
+            firstRowButtons.forEach(button => {
+                button.style.backgroundColor = "rgb(4, 112, 49)";
+                button.addEventListener("mouseenter", (event) => {
+                    event.target.style.backgroundColor = "rgb(33, 165, 88)";
+                });
+                button.addEventListener("mouseleave", (event) => {
+                    event.target.style.backgroundColor = "rgb(4, 112, 49)";
+                });
+            });
+            operatorsButtons.forEach(button => {
+                button.style.backgroundColor = "rgb(29, 204, 67)";
+                button.addEventListener("mouseenter", (event) => {
+                    event.target.style.backgroundColor = "rgb(116, 223, 139)";
+                });
+                button.addEventListener("mouseleave", (event) => {
+                    event.target.style.backgroundColor = "rgb(29, 204, 67)";
+                });
+            });
+            break;
+
     }
+}
+
+function handleStyleButton(event, style) {
+    const styleButtons = Array.from(document.querySelectorAll("#style-buttons button"));
+    styleButtons.forEach((button) => button.style.backgroundColor = "rgb(233, 233, 233)");
+    event.target.style.backgroundColor = "rgb(168, 194, 218)";
+    changeCalculatorStyle(style);
 }
 
 function initializeInteractions() {
     const modernButton = document.querySelector("#modern-btn");
     const classicButton = document.querySelector("#classic-btn");
+    const mintButton = document.querySelector("#mint-btn");
 
-    modernButton.addEventListener("click", (event) => changeCalculatorStyle(event, MODERN_STYLE));
-    classicButton.addEventListener("click", (event) => changeCalculatorStyle(event, CLASSIC_STYLE));
+    modernButton.addEventListener("click", (event) => handleStyleButton(event, MODERN_STYLE));
+    classicButton.addEventListener("click", (event) => handleStyleButton(event, CLASSIC_STYLE));
+    mintButton.addEventListener("click", (event) => handleStyleButton(event, MINT_STYLE));
 }
-
 
 // Global constants and variables
 const EQUALS_KEY = "=";
@@ -345,7 +461,7 @@ const PERCENT_OPERATOR = "\u0025";
 const PLUS_MINUS_OPERATOR = "\u00B1";
 const maxNumber = 9_999_999_999_999;
 const digitsLimit = 13;
-const MODERN_STYLE = 1, CLASSIC_STYLE = 2;
+const MODERN_STYLE = 1, CLASSIC_STYLE = 2, MINT_STYLE = 3;
 const numberFormatter = Intl.NumberFormat("en-US");
 let history, output, hasResultBuffer;
 let stack = {

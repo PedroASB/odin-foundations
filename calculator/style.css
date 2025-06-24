@@ -81,7 +81,7 @@ body {
     flex-direction: column;
 }
 
-#header #styles #buttons {
+#header #style-buttons {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -199,7 +199,7 @@ body {
 }
 
 #row-1 button {
-    background-color: gray;
+    background-color: rgb(128, 128, 128);
 }
 
 #calc-buttons button.operator,
@@ -226,7 +226,7 @@ button:focus {
     outline: none;
 }
 
-#calc-buttons button:hover {
+/* #calc-buttons button:hover {
     transition-duration: 0.2s;
 }
 
@@ -241,4 +241,4 @@ button:focus {
 
 #row-1 button:hover {
     background-color: rgb(167, 167, 167);
-}
+} */
