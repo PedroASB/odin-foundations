@@ -2,7 +2,7 @@
 
 ## Description
 - HTML + CSS + JavaScript project.
-- This is a traditional web-based calculator that supports the four basic math operations (addition, subtraction, multiplication, division). It's possible to interact using either the mouse or the keyboard. Additionally, there are three available styles for the calculator: Modern, Classic and Mint.
+- This is a traditional web-based calculator that supports the four basic arithmetic operations. It's possible to interact using either the mouse or the keyboard. Additionally, there are three available styles for the calculator: Modern, Classic and Mint.
 
 ## Preview
 <div align="center">
@@ -12,12 +12,15 @@
 </div>
 
 ## Usage
-- The calculator's behavior is intuitive. You can use either the mouse or the keyboard for input. See the table below for all keyboard commands.
+- The calculator's behavior is intuitive. It supports addition, subtraction, multiplication and division.
+- You can use either the mouse or the keyboard for input.
+- Decimal numbers can be entered by pressing the dot (**.**) button.
 - The **%** operator divides the current number by 100.
 - The **+/-** operator negates the current number.
-- Decimal numbers can be entered by pressing the dot (**.**) button.
+- Use **=** or **Enter** to show the result.
 - Use **Backspace** to undo the last input.
-- Use **Delete (AC)** to clear all data.
+- Use **Delete** to clear all data (AC button).
+- See the table below for all keyboard commands.
 
 | Input/Action | Keyboard button |
 | :--- | :--- |
@@ -40,7 +43,7 @@
 - If the user presses multiple binary operators in a row (****&plus;****, **&minus;**, **&times;**, or **&divide;**), the last one is used for the next operation.
 - After displaying a result using the equals (**&equals;**) button, entering a new digit clears the current result and begins a new operation, i.e., it starts a new operand.
 - After displaying a result using the equals (**&equals;**) button, pressing a binary operator (**&plus;**, **&minus;**, **&times;**, or **&divide;**) immediately uses the result as the first operand in the next operation.
-- **Chained operations:** after an input like "**A operator B**", pressing another binary operator (**&plus;**, **&minus;**, **&times;**, or **&divide;**) instead of equals (`=`) makes a chain of operations. For example, the input `10 + 20 + 40` calculates `10 + 20`, displays `30`, then performs `30 + 40`.
+- **Chained operations:** after an input like "**A operator B**", pressing another binary operator (**&plus;**, **&minus;**, **&times;**, or **&divide;**) instead of equals (**&equals;**) makes a chain of operations. For example, the input `10 + 20 + 40` calculates `10 + 20`, displays `30`, then performs `30 + 40`.
 - The maximum absolute value that the user can input is `9,999,999,999,999`. However, higher or lower values can be obtained from operations.
 - Large positive or negative results (i.e. values with absolute value greater than `9,999,999,999,999`) are displayed in scientific notation (e.g., `10,000,000,000,000` is displayed as `1.000e+13`).
 - **Division by zero:** after an attempt to divide by zero, an error message "`Math Error`" is displayed and the calculator is cleared (similar to pressing **AC** button), in order to avoid new operations with an error as an operand.
@@ -57,6 +60,6 @@
 ![Screenshot](./screenshots/screenshot-2.png)
 ![Screenshot](./screenshots/screenshot-3.png)
 
-## Atributions
+## Attributions
 - <a href="https://www.flaticon.com/free-icons/backspace" title="backspace icons">Backspace icons created by Icon Smart - Flaticon</a>
 - <a href="https://www.flaticon.com/free-icons/plus" title="plus icons">Plus icons created by Freepik - Flaticon</a>
