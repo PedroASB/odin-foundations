@@ -1,17 +1,17 @@
 # Landing Page
 
-### Description
+## Description
 
 - HTML + CSS project (using flexbox).
 - It's a landing page for a fictional online programming courses platform called Kangaroo.
 - It was initially implemented as a template for a generic landing page, which can be found in `/landing-page/template-version/`.
 
-### Screenshots
+## Screenshots
 
-![Landing Page - Screenshot 1](./assets/screenshots/landing-page-1.png)
-![Landing Page - Screenshot 2](./assets/screenshots/landing-page-2.png)
+![Landing Page - Screenshot 1](./screenshots/landing-page-1.png)
+![Landing Page - Screenshot 2](./screenshots/landing-page-2.png)
 
-### Attributions
+## Attributions
 
 - <a href="https://www.pexels.com/photo/man-person-woman-hand-6894013/" title="mikhail-nilov-photo">Header Photo by Mikhail Nilov</a>
 - <a href="https://www.flaticon.com/free-icons/kangaroo" title="kangaroo icons">Kangaroo icons created by Freepik - Flaticon</a>

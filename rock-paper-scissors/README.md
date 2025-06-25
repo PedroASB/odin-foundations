@@ -1,10 +1,10 @@
 # Rock Paper Scissors
 
-### Description
+## Description
 
 - HTML + CSS + JavaScript project.
 - It's a Rock Paper Scissors game with UI, where the player plays against the computer.
 
-### Screenshots
+## Screenshots
 
-![page](./assets/screenshot.png)
+![Screenshot](./screenshots/screenshot-1.png)
