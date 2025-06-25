@@ -1,10 +1,15 @@
 # Calculator
 
 ## Description
-
 - HTML + CSS + JavaScript project.
 - This is a traditional web-based calculator that supports the four basic math operations (addition, subtraction, multiplication, division). It's possible to interact using either the mouse or the keyboard. Additionally, there are three available styles for the calculator: Modern, Classic and Mint.
 
+## Preview
+<div align="center">
+    <img width="300px" src="./screenshots/screenshot-4.png" alt="Screenshot">
+    <img width="300px" src="./screenshots/screenshot-5.png" alt="Screenshot">
+    <img width="300px" src="./screenshots/screenshot-6.png" alt="Screenshot">
+</div>
 
 ## Usage
 - The calculator's behavior is intuitive. You can use either the mouse or the keyboard for input. See the table below for all keyboard commands.
@@ -28,7 +33,6 @@
 | Undo last input | `Backspace` |
 | Clear all data (AC) | `Delete` |
 
-
 ## Features
 ### Functioning
 - The calculator is stack-based, i.e., numbers and operators entered by the user are pushed onto a stack, which is implemented as a JavaScript object.
@@ -48,26 +52,11 @@
 - **Dynamic output scaling:** if the output size is too large to fit, its font size is gradually reduced to prevent display overflow.
 - **Calculator themes:** the calculator's style can be changed using the options in the header on the left side. There are three available themes: Modern, Classic and Mint.
 
-
-
 ## Screenshots
-
-<!-- colocar em screenshots/ -->
-<!-- colocar alt text -->
-
-<div align="center">
-    <img width="300px" src="./screenshots/screenshot-4.png" alt="Screenshot">
-    <img width="300px" src="./screenshots/screenshot-5.png" alt="Screenshot">
-    <img width="300px" src="./screenshots/screenshot-6.png" alt="Screenshot">
-</div>
-
 ![Screenshot](./screenshots/screenshot-1.png)
 ![Screenshot](./screenshots/screenshot-2.png)
 ![Screenshot](./screenshots/screenshot-3.png)
 
-
-
 ## Atributions
-
 - <a href="https://www.flaticon.com/free-icons/backspace" title="backspace icons">Backspace icons created by Icon Smart - Flaticon</a>
 - <a href="https://www.flaticon.com/free-icons/plus" title="plus icons">Plus icons created by Freepik - Flaticon</a>
