@@ -132,10 +132,12 @@ function startGame(event) {
 
     for (btn of buttons) {
         btn.addEventListener("mouseenter", (event) => {
-            event.target.style.backgroundColor = "rgb(72, 132, 134)";
+            event.target.style.backgroundColor = "rgb(112, 192, 139)";
+            event.target.style.borderColor = "rgba(57, 148, 87, 0.42)";
         });
         btn.addEventListener("mouseleave", (event) => {
-            event.target.style.backgroundColor = "rgb(95, 158, 160)";
+            event.target.style.backgroundColor = "rgb(77, 180, 111)";
+            event.target.style.borderColor = "rgba(39, 145, 74, 0.418)";
         });
     }
 }
