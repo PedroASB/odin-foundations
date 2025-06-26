@@ -20,19 +20,27 @@ My projects from the Foundations Course of [The Odin Project](https://www.theodi
 
 ---
 
-# Projects Preview
+# Project Previews
 
 ## Odin Recipes
 ![Odin Recipes Screenshot](<./odin-recipes/screenshots/homepage-1.png>)
 
+---
+
 ## Landing Page
 ![Landing Page Screenshot](<./landing-page/screenshots/landing-page-1.png>)
+
+---
 
 ## Rock Paper Scissors
 ![Rock Paper Scissors Screenshot](<./rock-paper-scissors/screenshots/screenshot-2.png>)
 
+---
+
 ## Etch A Sketch
 ![Etch A Sketch Screenshot](<./etch-a-sketch/screenshots/screenshot-3.png>)
+
+---
 
 ## Calculator
 ![Calculator Screenshot](<./calculator/screenshots/screenshot-1.png>)
