@@ -1,4 +1,4 @@
-# Odin Foundations
+# The Odin Project - Foundations
 
 <!-- Badges -->
 ![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -10,7 +10,7 @@
 
 My projects from the Foundations Course of [The Odin Project](https://www.theodinproject.com/).
 
-| 📝 __Project__ | 📕 __Description__ | 💻 __Tech & Features__ | 🔗 __Link__ |
+| 📝 __Project__ | 📕 __Description__ | 💻 __Features__ | 🔗 __Link__ |
 | :------------- | :----------------- | :-------------- | :---------- |
 | **Odin Recipes** | A basic recipe website that consists of a main index page which have links to a few recipes. | HTML + CSS | [odin-recipes/](<./odin-recipes/>) |
 | **Landing Page** | A landing page for a fictional online programming courses platform. | HTML + CSS (using flexbox) | [landing-page/](<./landing-page/>) |
