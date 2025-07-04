@@ -1,6 +1,5 @@
-# The Odin Project - Foundations
+# The Odin Project &mdash; Foundations
 
-<!-- Badges -->
 ![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-663399?style=for-the-badge&logo=css&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
@@ -8,7 +7,7 @@
 
 ## Overview
 
-My projects from the Foundations Course of [The Odin Project](https://www.theodinproject.com/).
+This repository contains my projects from the Foundations Course of [The Odin Project](https://www.theodinproject.com/). The course offers a hands-on introduction to the essential tools required to build real, functional websites. These projects mark the beginning of my journey into full stack development. While they are simple, I've put care and effort into each one to build a solid foundation in HTML, CSS and JavaScript. See the table below for a quick summary of each project.
 
 | 📝 __Project__ | 📕 __Description__ | 💻 __Features__ | 🔗 __Link__ |
 | :------------- | :----------------- | :-------------- | :---------- |
