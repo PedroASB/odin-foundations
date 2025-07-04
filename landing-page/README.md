@@ -1,9 +1,14 @@
 # Landing Page
 
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-663399?style=for-the-badge&logo=css&logoColor=white)
+![Flexbox](https://img.shields.io/badge/Flexbox-gray?style=for-the-badge&color=374c52)
+
 ## Description
 
 - HTML + CSS project (using flexbox).
 - It's a landing page for a fictional online programming courses platform called Kangaroo.
+- This was my second project using HTML and CSS, where the objective was to learn how to use flexbox in CSS. This tool has now become part of my front-end repertoire.
 - It was initially implemented as a template for a generic landing page, which can be found in `/landing-page/template-version/`.
 
 ## Screenshots

@@ -1,8 +1,14 @@
 # Calculator
 
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-663399?style=for-the-badge&logo=css&logoColor=white)
+![Flexbox](https://img.shields.io/badge/Flexbox-gray?style=for-the-badge&color=374c52)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
 ## Description
 - HTML + CSS + JavaScript project.
 - This is a traditional web-based calculator that supports the four basic arithmetic operations. It's possible to interact using either the mouse or the keyboard. Additionally, there are three available styles for the calculator: Modern, Classic and Mint.
+- This was the last project of the foundations course. Here, I applied everything I learned and even brought some extra features to those that were suggested in the course. I really enjoyed doing it.
 
 ## Preview
 <div align="center">
