@@ -11,6 +11,10 @@
 - This was my second project using HTML and CSS, where the objective was to learn how to use flexbox in CSS. This tool has now become part of my front-end repertoire.
 - It was initially implemented as a template for a generic landing page, which can be found in `/landing-page/template-version/`.
 
+## Live Demo
+
+- **[Click here](https://pedroasb.github.io/odin-foundations/landing-page/)** to try out this project on browser.
+
 ## Screenshots
 
 ![Landing Page - Screenshot 1](./screenshots/landing-page-1.png)

@@ -11,6 +11,10 @@
 - It's a Rock Paper Scissors game with UI, where the player plays against the computer.
 - This was my first practical project using JavaScript. This time, the focus was not on the interface itself, but on learning the language that will be the basis for the back-end of larger projects.
 
+## Live Demo
+
+- **[Click here](https://pedroasb.github.io/odin-foundations/rock-paper-scissors/)** to try out this project on browser.
+
 ## Screenshots
 
 ![Screenshot](./screenshots/screenshot-1.png)

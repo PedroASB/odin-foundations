@@ -17,6 +17,12 @@
     <img width="300px" src="./screenshots/screenshot-6.png" alt="Screenshot">
 </div>
 
+
+## Live Demo
+
+- **[Click here](https://pedroasb.github.io/odin-foundations/calculator/)** to try out this project on browser.
+
+
 ## Usage
 - The calculator's behavior is intuitive. It supports addition, subtraction, multiplication and division.
 - You can use either the mouse or the keyboard for input.
